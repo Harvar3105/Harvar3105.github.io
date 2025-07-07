@@ -1,0 +1,35 @@
+import {useTranslations} from 'next-intl';
+
+export default function Header() {
+    const navButtonsStyle = "text-sm font-medium hover:text-gray-400 hover:bg-gray-900 p-3 px-5 border-b-2 hover:border-b-cyan-400 border-transparent";
+    const t = useTranslations('Navigation');
+
+    return (
+        <header className="w-full py-4 px-6 shadow-sm">
+        <nav>
+            <ul className="flex justify-center">
+            <li>
+                <button className={navButtonsStyle}>
+                    {t('home')}
+                </button>
+            </li>
+            <li>
+                <button className={navButtonsStyle}>
+                    {t('about')}
+                </button>
+            </li>
+            <li>
+                <button className={navButtonsStyle}>
+                    {t('projects')}
+                </button>
+            </li>
+            <li>
+                <button className={navButtonsStyle}>
+                    {t('contact')}
+                </button>
+            </li>
+            </ul>
+        </nav>
+        </header>
+    );
+}
