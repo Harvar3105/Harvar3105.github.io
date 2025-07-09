@@ -1,4 +1,6 @@
 import {useTranslations} from 'next-intl';
+import LanguageSwitcher from '../widgets/LanguageSwitcher';
+import ThemeSwitcher from '../widgets/ThemeSwitcher';
 
 export default function Header() {
     const navButtonsStyle = "text-sm font-medium hover:text-gray-400 hover:bg-gray-900 p-3 px-5 border-b-2 hover:border-b-cyan-400 border-transparent";
@@ -6,7 +8,8 @@ export default function Header() {
 
     return (
         <header className="w-full py-4 px-6 shadow-sm">
-        <nav>
+        <nav className='flex justify-between'>
+            <ThemeSwitcher />
             <ul className="flex justify-center">
             <li>
                 <button className={navButtonsStyle}>
@@ -29,6 +32,7 @@ export default function Header() {
                 </button>
             </li>
             </ul>
+            <LanguageSwitcher/>
         </nav>
         </header>
     );
