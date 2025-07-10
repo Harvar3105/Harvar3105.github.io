@@ -19,13 +19,13 @@ export default function LanguageSwitcher() {
     <button
       onClick={toggleDropdown}
       type="button"
-      className="inline-flex justify-center items-center w-10 h-10 rounded-full bg-amber-300 dark:bg-[#33353b] shadow-sm"
+      className="inline-flex justify-center items-center w-10 h-10 rounded-full bg-[var(--accent-color)] shadow-sm"
     >
-      <span>{currentLocale.toUpperCase()}</span>
+      <span className="font-bold text-black">{currentLocale.toUpperCase()}</span>
     </button>
 
     <div
-      className="absolute right-0 mt-2 w-28 origin-top-right rounded-md bg-amber-200 dark:bg-[#33353b] shadow-lg z-50"
+      className="absolute right-0 mt-2 w-28 origin-top-right rounded-md bg-[var(--accent-color)] shadow-lg z-50"
     >
       {isOpen && (
         <div className="py-1">

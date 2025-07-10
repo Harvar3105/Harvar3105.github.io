@@ -2,9 +2,26 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-:root {
+/* Light theme. Default */
+:root { 
   --background: #ffffff;
   --foreground: #171717;
+  --accent-color: #cd43da;
+  --text: var(--foreground);
+  --hover-background: #d1d5db;
+  --hover-text: #5b5b5b;
+  --grey-icons: #4b5563;
+}
+
+/* Dark theme. Overrides root */
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --accent-color: #22d3ee;
+  --text: var(--foreground);
+  --hover-background: #111827;
+  --hover-text: #a6a6a6;
+  --grey-icons: #4b5563;
 }
 
 @theme inline {
@@ -14,12 +31,12 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   background: var(--background);

@@ -3,7 +3,7 @@ import LanguageSwitcher from '../widgets/LanguageSwitcher';
 import ThemeSwitcher from '../widgets/ThemeSwitcher';
 
 export default function Header() {
-    const navButtonsStyle = "text-sm font-medium hover:text-gray-400 hover:bg-gray-900 p-3 px-5 border-b-2 hover:border-b-cyan-400 border-transparent";
+    const navButtonsStyle = "text-sm font-medium hover:text-[var(--hover-text)] hover:bg-[var(--hover-background)] p-3 px-5 border-b-2 hover:border-b-[var(--accent-color)] border-transparent";
     const t = useTranslations('Navigation');
 
     return (

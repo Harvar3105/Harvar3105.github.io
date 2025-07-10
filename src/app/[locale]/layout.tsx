@@ -37,13 +37,13 @@ export default async function LocaleLayout({
   }
  
   return (
-    <html lang={locale} >
+    <html lang={locale}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
         <NextIntlClientProvider locale={locale}>
           <Header />
-          <main className="flex-grow">{children}</main>
+            <main className="flex-grow">{children}</main>
           <Footer />
         </NextIntlClientProvider>
       </body>

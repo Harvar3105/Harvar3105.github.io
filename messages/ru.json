@@ -4,5 +4,8 @@
     "about": "О себе",
     "projects": "Проекты",
     "contact": "Контакты"
+  },
+  "Footer": {
+    "authorship": "© 2025 Jüri Petrotšenko. Сделано с ♥️ на Next.js"
   }
 }
