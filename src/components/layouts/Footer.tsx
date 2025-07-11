@@ -6,7 +6,7 @@ export default function Footer() {
 
   const email = process.env.EMAIL;
   const linkedInUrl = process.env.LINKEDIN_URL;
-  const githubUrl = process.env.GITHUB_URL;
+  const githubUrl = process.env.GH_URL;
   const iconsSize = 24;
   const iconsStyle = "text-[var(--grey-icons)] hover:text-[var(--accent-color)]";
 
