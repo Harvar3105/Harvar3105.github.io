@@ -32,7 +32,10 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
   const t = await getTranslations({locale, namespace: 'Metadata'});
  
   return {
-    title: t('title')
+    title: t('title'),
+    icons: {
+      icon: '/favicon.ico'
+    }
   };
 }
  
