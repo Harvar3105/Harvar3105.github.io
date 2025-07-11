@@ -6,7 +6,7 @@ import Header from "@/components/layouts/Header";
 import {NextIntlClientProvider, hasLocale} from 'next-intl';
 import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
-import { getMessages, getTranslations } from "next-intl/server";
+import {getTranslations } from "next-intl/server";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -48,15 +48,13 @@ export default async function LocaleLayout({
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
-
-  const messages = await getMessages();
  
   return (
     <html lang={locale}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
-        <NextIntlClientProvider locale={locale} messages={messages}>
+        <NextIntlClientProvider locale={locale}>
           <Header />
             <main className="flex-grow">{children}</main>
           <Footer />
