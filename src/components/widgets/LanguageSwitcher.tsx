@@ -1,6 +1,5 @@
 "use client";
 
-import { routing } from "@/i18n/routing";
 import { useLocale } from "next-intl";
 import Link from "next/link";
 import { usePathname } from "next/navigation";

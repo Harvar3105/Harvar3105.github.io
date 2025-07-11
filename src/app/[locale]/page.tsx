@@ -1,7 +1,11 @@
 import Fireflies from "@/components/animations/fireflies";
-import Image from "next/image";
+import {use} from 'react';
+import {getTranslations, setRequestLocale} from 'next-intl/server';
 
-export default function Home() {
+export default function Home({params} : {params: Promise<{locale: string}>;}) {
+  const {locale} = use(params);
+  setRequestLocale(locale);
+
   return (
     <div className="items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
 
@@ -11,7 +15,7 @@ export default function Home() {
         </h3> */}
         <span className="absolute bottom-0 left-10">
           <h3 className="text-2xl">
-            Recent Bachelor's graduate in IT Systems Development
+            Recent Bachelor`&#39;`s graduate in IT Systems Development
           </h3>
           <h1 className="text-6xl font-bold">
             Jüri Petrotsenko
@@ -120,4 +124,13 @@ export default function Home() {
     //   </footer>
     // </div>
   );
+}
+ 
+export async function generateMetadata({params}: {params: Promise<{locale: string}>;}) {
+  const {locale} = await params;
+  const t = await getTranslations({locale, namespace: 'Metadata'});
+ 
+  return {
+    title: t('title')
+  };
 }

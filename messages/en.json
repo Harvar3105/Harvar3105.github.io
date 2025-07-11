@@ -7,5 +7,8 @@
   },
   "Footer": {
     "authorship": "© 2025 Jüri Petrotšenko. Made with ♥️ on Next.js"
+  },
+  "Metadata": {
+    "title": "Portfolio"
   }
 }
