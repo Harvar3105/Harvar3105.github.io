@@ -21,7 +21,7 @@ export default function Header() {
         <header
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-[var(--border)] px-5 bg-[var(--background)] ${
+            className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-[var(--border)] px-5 backdrop-blur ${
                 isHidden ? "h-10" : "h-16"
             }`}
         >

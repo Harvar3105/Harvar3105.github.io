@@ -11,7 +11,7 @@ export default function Footer() {
   const iconsStyle = "text-[var(--grey-icons)] hover:text-[var(--accent-color)]";
 
   return (
-    <footer className="w-full py-6 text-sm text-center border-t border-gray-300 dark:border-gray-700">
+    <footer className="w-full py-6 text-sm text-center border-t border-gray-300 dark:border-gray-700 backdrop-blur">
       <div className="flex justify-center gap-4 mb-2">
         <a
           href={githubUrl}
