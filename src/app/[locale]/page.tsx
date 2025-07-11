@@ -1,6 +1,6 @@
 import Fireflies from "@/components/animations/fireflies";
 import {use} from 'react';
-import {getTranslations, setRequestLocale} from 'next-intl/server';
+import {setRequestLocale} from 'next-intl/server';
 
 export default function Home({params} : {params: Promise<{locale: string}>;}) {
   const {locale} = use(params);
@@ -124,13 +124,4 @@ export default function Home({params} : {params: Promise<{locale: string}>;}) {
     //   </footer>
     // </div>
   );
-}
- 
-export async function generateMetadata({params}: {params: Promise<{locale: string}>;}) {
-  const {locale} = await params;
-  const t = await getTranslations({locale, namespace: 'Metadata'});
- 
-  return {
-    title: t('title')
-  };
 }
