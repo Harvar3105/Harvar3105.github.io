@@ -74,9 +74,9 @@ jobs:
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Check i18n files
-        run: ls la src/i18n
+        run: ls src/i18n
       - name: Check localizations
-        run: ls la messages
+        run: ls messages
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Upload artifact
