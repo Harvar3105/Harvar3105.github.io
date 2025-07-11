@@ -11,6 +11,7 @@
   --hover-background: #d1d5db;
   --hover-text: #5b5b5b;
   --grey-icons: #4b5563;
+  --border: #d1d5dc;
 }
 
 /* Dark theme. Overrides root */
@@ -22,6 +23,7 @@
   --hover-background: #111827;
   --hover-text: #a6a6a6;
   --grey-icons: #4b5563;
+  --border: #364153;
 }
 
 @theme inline {
@@ -42,4 +44,43 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  @keyframes fly {
+    0% {
+      transform: translateY(0) translateX(0);
+    }
+    25% {
+      transform: translateY(-50px) translateX(30px);
+    }
+    50% {
+      transform: translateY(20px) translateX(-40px);
+    }
+    75% {
+      transform: translateY(-30px) translateX(20px);
+    }
+    100% {
+      transform: translateY(0) translateX(0);
+    }
+  }
+
+  .animate-fly {
+    animation: fly 10s ease-in-out infinite;
+  }
+
+  @keyframes softPulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.08);
+      opacity: 0.7;
+    }
+  }
+
+  .animate-soft-pulse {
+    animation: softPulse 2s ease-in-out infinite;
+  }
 }
