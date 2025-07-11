@@ -51,6 +51,11 @@ export default function Header() {
                             {t('contact')}
                         </Link>
                     </li>
+                    <li>
+                        <Link href="/cv" className={navButtonsStyle}>
+                            {t('cv')}
+                        </Link>
+                    </li>
                     </ul>
                     <LanguageSwitcher/>
                 </nav>

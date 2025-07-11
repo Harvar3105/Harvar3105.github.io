@@ -10,12 +10,9 @@ export default function Home({params} : {params: Promise<{locale: string}>;}) {
     <div className="items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
 
       <div className="relative w-full h-100">
-        {/* <h3 class absolute>
-          Recent Bachelor's graduate in IT Systems development
-        </h3> */}
         <span className="absolute bottom-0 left-10">
-          <h3 className="text-2xl">
-            Recent Bachelor`&#39;`s graduate in IT Systems Development
+          <h3 className="text-xl">
+            Recent Bachelor&#39;s graduate in IT Systems Development
           </h3>
           <h1 className="text-6xl font-bold">
             Jüri Petrotsenko

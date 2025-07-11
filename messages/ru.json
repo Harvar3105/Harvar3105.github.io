@@ -1,9 +1,10 @@
 {
   "Navigation": {
     "home": "Главная",
-    "about": "О себе",
+    "about": "Навыки",
     "projects": "Проекты",
-    "contact": "Контакты"
+    "contact": "Контакты",
+    "cv": "CV"
   },
   "Footer": {
     "authorship": "© 2025 Jüri Petrotšenko. Сделано с ♥️ на Next.js"
