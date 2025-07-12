@@ -10,7 +10,8 @@ export default function PdfViewer({ url }: { url: string }) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
-     let renderTask: any = null;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let renderTask: any = null;
     let cancelled = false;
 
     const loadPdf = async () => {
