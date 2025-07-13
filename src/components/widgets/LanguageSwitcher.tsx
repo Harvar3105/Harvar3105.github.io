@@ -29,7 +29,7 @@ export default function LanguageSwitcher() {
       {isOpen && (
         <div className="py-1">
         <Link
-          href={pathname + "/en"}
+          href={"/en" + pathname}
           onClick={closeDropdown}
           className="flex items-center w-full px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-[#43454d]"
         >
@@ -37,7 +37,7 @@ export default function LanguageSwitcher() {
         </Link>
 
         <Link
-          href={pathname + "/ru"}
+          href={"/ru" + pathname}
           onClick={closeDropdown}
           className="flex items-center w-full px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-[#43454d]"
         >
