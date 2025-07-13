@@ -7,10 +7,10 @@
     "cv": "CV"
   },
   "Footer": {
-    "authorship": "© 2025 Jüri Petrotšenko. Сделано с ♥️ на Next.js"
+    "authorship": "© 2025 Jüri Petrotšenko. Сделано с ♥️ на Next.js и Tailwind CSS"
   },
   "Metadata": {
-    "title": "Партфолио"
+    "title": "Портфолио"
   },
   "Home":{
     "about": "Выпускник направления развития ИТ систем уровня бакалавриата",
