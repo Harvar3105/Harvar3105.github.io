@@ -37,7 +37,7 @@ export default function Header() {
                         </Link>
                     </li>
                     <li>
-                        <Link href="/about" className={navButtonsStyle}>
+                        <Link href="/skills" className={navButtonsStyle}>
                             {t('about')}
                         </Link>
                     </li>

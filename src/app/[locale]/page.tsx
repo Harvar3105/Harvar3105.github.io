@@ -1,10 +1,13 @@
 import Fireflies from "@/components/animations/fireflies";
 import {use} from 'react';
 import {setRequestLocale} from 'next-intl/server';
+import { useTranslations } from "next-intl";
 
 export default function Home({params} : {params: Promise<{locale: string}>;}) {
   const {locale} = use(params);
   setRequestLocale(locale);
+
+  const t = useTranslations('Home');
 
   return (
     <div className="items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
@@ -12,10 +15,10 @@ export default function Home({params} : {params: Promise<{locale: string}>;}) {
       <div className="relative w-full h-100">
         <span className="absolute bottom-0 left-10">
           <h3 className="text-xl">
-            Recent Bachelor&#39;s graduate in IT Systems Development
+            {t("about")}
           </h3>
           <h1 className="text-6xl font-bold">
-            Jüri Petrotsenko
+            {t("name")}
           </h1>
         </span>
       </div>

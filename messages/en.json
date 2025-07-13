@@ -11,5 +11,50 @@
   },
   "Metadata": {
     "title": "Portfolio"
+  },
+  "Home":{
+    "about": "Recent Bachelor's graduate in IT Systems Development",
+    "name": "Jüri Petrotsenko"
+  },
+  "Skills": {
+    "Fields": {
+      "header": "Fields",
+      "Head": {
+        "field": "Field",
+        "techs": "Technologies"
+      },
+      "Body": {
+        "web": "Web",
+        "server": "Server",
+        "crosp": "Crossplatform",
+        "db": "Database",
+        "other": "Other"
+      }
+    },
+    "Prog_langs": {
+      "header": "Programming languages",
+      "Head": {
+        "lang": "Language",
+        "knowledge": "Knowledge"
+      }
+    },
+    "Languages": {
+      "header": "Languages",
+      "Head": {
+        "lang": "Language",
+        "lvl": "Level"
+      },
+      "Body": {
+        "Lang": {
+          "eng": "English",
+          "est": "Estonian",
+          "rus": "Russian"
+        },
+        "Level": {
+          "b2": "B2",
+          "native": "Native"
+        }
+      }
+    }
   }
 }
