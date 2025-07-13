@@ -34,12 +34,12 @@
     "Prog_langs": {
       "header": "Языки программирования",
       "Head": {
-        "lang": "Ящык",
+        "lang": "Язык",
         "knowledge": "Знание"
       }
     },
     "Languages": {
-      "header": "Языке",
+      "header": "Языки",
       "Head": {
         "lang": "Язык",
         "lvl": "Уровень"
