@@ -13,6 +13,7 @@ export default function CV({params}: {params: Promise<{locale: string}>;}){
 
     return(
         <div className="flex flex-col items-center justify-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+            {/* TODO: if RU, show RU CV. Create RU CV */}
             <PdfViewer url="/pdf/CV.pdf" />
             <FileDownloader url="/pdf/CV.pdf" filename="Juri_Petrotsenko_CV" label={t("download")} />
             <Fireflies count={50} />
