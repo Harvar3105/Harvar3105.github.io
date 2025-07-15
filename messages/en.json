@@ -55,6 +55,11 @@
           "native": "Native"
         }
       }
+    },
+    "Other": {
+      "header": "Other",
+      "modeling": "Modeling",
+      "game_dev": "Games development"
     }
   },
   "Contact":{

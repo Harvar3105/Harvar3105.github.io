@@ -11,10 +11,10 @@ export default function About({params}: {params: Promise<{locale: string}>;}) {
     const t = useTranslations("Skills");
     
     return (
-    <div className='items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]'>
+    <div className='items-center justify-items-center min-h-screen p-8 pb-20 gap-8 sm:p-20 font-[family-name:var(--font-geist-sans)]'>
 
-        <h1 className="text-xl font-bold mb-4">{t("Fields.header")}</h1>
-        <div className='p-10 bg-[var(--background)]'>
+        <h1 className="text-xl font-bold mb-4 mt-10">{t("Fields.header")}</h1>
+        <div className='bg-[var(--background)]'>
             <div className="overflow-hidden rounded-xl border border-[var(--border)]">
                 <table className='table-auto w-full text-left border-collapse'>
                     <thead className='bg-[var(--hover-background)] text-[var(--hover-text)]'>
@@ -50,8 +50,8 @@ export default function About({params}: {params: Promise<{locale: string}>;}) {
             </div>
         </div>
 
-        <h1 className="text-xl font-bold mt-16">{t("Prog_langs.header")}</h1>
-        <div className='p-10 bg-[var(--background)]'>
+        <h1 className="text-xl font-bold mb-4 mt-10">{t("Prog_langs.header")}</h1>
+        <div className='bg-[var(--background)]'>
             <div className="overflow-hidden rounded-xl border border-[var(--border)]">
                 <table className='table-auto w-full text-left border-collapse'>
                     <thead className='bg-[var(--hover-background)] text-[var(--hover-text)]'>
@@ -130,8 +130,8 @@ export default function About({params}: {params: Promise<{locale: string}>;}) {
             </div>
         </div>
 
-        <h1 className="text-xl font-bold mb-4">{t("Languages.header")}</h1>
-        <div className='p-10 bg-[var(--background)]'>
+        <h1 className="text-xl font-bold mb-4 mt-10">{t("Languages.header")}</h1>
+        <div className='bg-[var(--background)]'>
             <div className="overflow-hidden rounded-xl border border-[var(--border)]">
                 <table className='table-auto w-full text-left border-collapse'>
                     <thead className='bg-[var(--hover-background)] text-[var(--hover-text)]'>
@@ -162,6 +162,32 @@ export default function About({params}: {params: Promise<{locale: string}>;}) {
                             <td className='border border-[var(--border)] p-2'>
                                 <div className="flex justify-end">
                                     {t("Languages.Body.Level.native")}
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <h1 className="text-xl font-bold mb-4 mt-10">{t("Other.header")}</h1>
+        <div className='bg-[var(--background)]'>
+            <div className="overflow-hidden rounded-xl border border-[var(--border)]">
+                <table className='table-auto w-full text-left border-collapse'>
+                    <tbody>
+                        <tr>
+                            <td className='border border-[var(--border)] p-2'>{t("Other.modeling")}</td>
+                            <td className='border border-[var(--border)] p-2'>
+                                <div className="flex justify-end">
+                                    Blender
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className='border border-[var(--border)] p-2'>{t("Other.game_dev")}</td>
+                            <td className='border border-[var(--border)] p-2'>
+                                <div className="flex justify-end">
+                                    Unity
                                 </div>
                             </td>
                         </tr>
