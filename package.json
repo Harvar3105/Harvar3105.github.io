@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "next": "15.3.5",
     "next-intl": "^4.3.4",
     "pdfjs-dist": "^5.3.93",
