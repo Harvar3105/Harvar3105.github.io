@@ -137,21 +137,33 @@ export default function About({params}: {params: Promise<{locale: string}>;}) {
                     <thead className='bg-[var(--hover-background)] text-[var(--hover-text)]'>
                         <tr>
                             <th className='border border-[var(--border)] p-2'>{t("Languages.Head.lang")}</th>
-                            <th className='border border-[var(--border)] p-2'>{t("Languages.Head.lvl")}</th>
+                            <th className='border border-[var(--border)] p-2 px-10'>{t("Languages.Head.lvl")}</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td className='border border-[var(--border)] p-2'>{t("Languages.Body.Lang.eng")}</td>
-                            <td className='border border-[var(--border)] p-2'>{t("Languages.Body.Level.b2")}</td>
+                            <td className='border border-[var(--border)] p-2'>
+                                <div className="flex justify-end">
+                                    {t("Languages.Body.Level.b2")}
+                                </div>
+                            </td>
                         </tr>
                         <tr>
                             <td className='border border-[var(--border)] p-2'>{t("Languages.Body.Lang.est")}</td>
-                            <td className='border border-[var(--border)] p-2'>{t("Languages.Body.Level.b2")}</td>
+                            <td className='border border-[var(--border)] p-2'>
+                                <div className="flex justify-end">
+                                    {t("Languages.Body.Level.b2")}
+                                </div>
+                            </td>
                         </tr>
                         <tr>
                             <td className='border border-[var(--border)] p-2'>{t("Languages.Body.Lang.rus")}</td>
-                            <td className='border border-[var(--border)] p-2'>{t("Languages.Body.Level.native")}</td>
+                            <td className='border border-[var(--border)] p-2'>
+                                <div className="flex justify-end">
+                                    {t("Languages.Body.Level.native")}
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
