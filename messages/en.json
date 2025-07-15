@@ -56,5 +56,19 @@
         }
       }
     }
+  },
+  "Contact":{
+    "form_name": "Contact form",
+    "Form": {
+      "name": "Your name",
+      "email": "Your email",
+      "subject": "Your subject",
+      "message": "Type message here...",
+      "send": "SEND",
+      "reset": "RESET"
+    }
+  },
+  "CV": {
+    "download": "Download CV"
   }
 }
