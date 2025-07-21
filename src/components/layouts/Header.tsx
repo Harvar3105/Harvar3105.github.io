@@ -6,6 +6,7 @@ import ThemeSwitcher from '../widgets/ThemeSwitcher';
 import { useState } from "react";
 import { useScrollDirection } from "@/hooks/useScrollDirection";
 import { Link } from '@/i18n/navigation';
+import FirefliesSetter from '../widgets/FirefliesSetter';
 
 export default function Header() {
     const navButtonsStyle = "inline-flex items-center justify-center text-sm font-medium hover:text-[var(--hover-text)] hover:bg-[var(--hover-background)] py-3 px-5 border-b-2 hover:border-b-[var(--accent-color)] border-transparent";
@@ -29,7 +30,10 @@ export default function Header() {
                 <nav className={`absolute inset-0 flex items-center justify-between transition-opacity duration-[750ms] ${
                             isHidden ? 'opacity-0 pointer-events-none' : 'opacity-100'
                         }`}>
-                    <ThemeSwitcher />
+                    <div className="flex items-center space-x-10">
+                        <ThemeSwitcher />
+                        <FirefliesSetter />
+                    </div>
                     <ul className="flex justify-center">
                     <li>
                         <Link href="/" className={navButtonsStyle}>

@@ -35,17 +35,21 @@
   --font-mono: var(--font-geist-mono);
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+input.no-spinner::-webkit-outer-spin-button,
+input.no-spinner::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Убирает стрелочки в Firefox */
+input.no-spinner {
+  -appearance: textfield;
 }
 
 @layer utilities {

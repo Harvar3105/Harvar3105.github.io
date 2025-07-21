@@ -1,7 +1,7 @@
-import Fireflies from "@/components/animations/fireflies";
 import {use} from 'react';
 import {setRequestLocale} from 'next-intl/server';
 import { useTranslations } from "next-intl";
+import FirefliesConsumer from '@/components/consumers/FirefliesConsumer';
 
 export default function Home({params} : {params: Promise<{locale: string}>;}) {
   const {locale} = use(params);
@@ -24,7 +24,7 @@ export default function Home({params} : {params: Promise<{locale: string}>;}) {
       </div>
 
       <div className="relative w-full h-50 pt-20">
-        <span className="absolute bottom-0 right-0 text-right">
+        <span className="absolute bottom-0 right-10 text-right">
           <h3 className="text-3xl font-bold">
             {t("about_me_header")}
           </h3>
@@ -38,7 +38,7 @@ export default function Home({params} : {params: Promise<{locale: string}>;}) {
         </span>
       </div>
 
-      <Fireflies count={50} />
+      <FirefliesConsumer />
     </div>
   );
 }

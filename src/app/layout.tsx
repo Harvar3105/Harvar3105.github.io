@@ -1,3 +1,4 @@
+import { FirefliesProvider } from "@/components/providers/FirefliesContextProvider";
 import { Geist, Geist_Mono } from "next/font/google";
 
 const geistSans = Geist({
@@ -10,14 +11,18 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const dynamic = 'force-static';
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
-      >
-        {children}
+      <FirefliesProvider>
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased `}
+        >
+          {children}
         </body>
+      </FirefliesProvider>
     </html>
   );
 }
