@@ -2,7 +2,7 @@ import Fireflies from "@/components/animations/fireflies";
 import FileDownloader from "@/components/widgets/FileDownloader";
 import PdfViewer from "@/components/widgets/PdfViewer";
 import { useTranslations } from "next-intl";
-import { getLocale, setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 import { use } from "react";
 
 export default function CV({params}: {params: Promise<{locale: string}>;}){

@@ -2,7 +2,6 @@ import {use} from 'react';
 import {setRequestLocale} from 'next-intl/server';
 import Fireflies from '@/components/animations/fireflies';
 import EmailSender from '@/components/widgets/EmailSender';
-import LoadingWidget from '@/components/widgets/LoadingWidget';
 import { useTranslations } from 'next-intl';
 
 export default function Contacts({params}: {params: Promise<{locale: string}>;}){

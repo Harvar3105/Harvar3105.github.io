@@ -14,7 +14,10 @@
   },
   "Home":{
     "about": "Recent Bachelor's graduate in IT Systems Development",
-    "name": "Jüri Petrotsenko"
+    "name": "Jüri Petrotsenko",
+    "about_me": "Recent Bachelor's graduate in IT Systems from the Tallinn University of Technology (TalTech) in Estonia with solid background in software development and system design. Interested in full-stack development and creation of web and cross-platform applications.",
+    "about_me_header": "About me:",
+    "passion": "Interested in continued development as a developer by engaging in real projects, learning best practices, and increasing technical skills in a work environment. Currently looking for a short-term job."
   },
   "Skills": {
     "Fields": {
