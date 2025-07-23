@@ -7,7 +7,7 @@ export default function FirefliesSetter() {
   const { count, changeCount } = useFireflies();
 
   const setChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const newValue = parseInt(event.target.value, 10)
+    const newValue = parseInt(event.target.value, 10);
     if (!isNaN(newValue)) {
       changeCount(newValue);
     }
