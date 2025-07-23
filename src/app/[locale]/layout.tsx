@@ -19,7 +19,7 @@ export function generateStaticParams() {
 export async function generateMetadata({params}: {params: Promise<{locale: string}>;}) {
   const {locale} = await params;
   const t = await getTranslations({locale, namespace: 'Metadata'});
- 
+
   return {
     title: t('title'),
     icons: {
@@ -27,7 +27,7 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
     }
   };
 }
- 
+
 export default async function LocaleLayout({
   children,
   params
@@ -40,11 +40,11 @@ export default async function LocaleLayout({
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
- 
+
   return (
     <NextIntlClientProvider locale={locale}>
       <Header />
-        <main className="flex-grow">{children}</main>
+      <main className="flex-grow">{children}</main>
       <Footer />
     </NextIntlClientProvider>
   );

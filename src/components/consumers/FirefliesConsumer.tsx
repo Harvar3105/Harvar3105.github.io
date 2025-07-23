@@ -14,5 +14,5 @@ export default function FirefliesConsumer() {
 
   return mounted
     ? <Fireflies count={count} />
-    : null; 
+    : null;
 }

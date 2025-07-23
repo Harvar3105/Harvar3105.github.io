@@ -17,7 +17,7 @@ export function FirefliesProvider({ children }: { children: ReactNode }) {
     if (stored === null) return;
 
     const parsed = parseInt(stored);
-    if (!isNaN(parsed)) setCount(parsed)
+    if (!isNaN(parsed)) setCount(parsed);
   }, []);
 
   const changeCount = (newCount: number) => {

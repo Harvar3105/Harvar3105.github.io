@@ -15,23 +15,23 @@ export default function PdfViewer({ url }: { url: string }) {
     let cancelled = false;
 
     const loadPdf = async () => {
-        const pdfjsLib = await import('pdfjs-dist');
-        pdfjsLib.GlobalWorkerOptions.workerSrc = '/pdf/pdf.worker.min.mjs';
+      const pdfjsLib = await import('pdfjs-dist');
+      pdfjsLib.GlobalWorkerOptions.workerSrc = '/pdf/pdf.worker.min.mjs';
 
-        const pdf = await pdfjsLib.getDocument(url).promise;
-        const page = await pdf.getPage(1);
-        const viewport = page.getViewport({ scale: 1.5 });
+      const pdf = await pdfjsLib.getDocument(url).promise;
+      const page = await pdf.getPage(1);
+      const viewport = page.getViewport({ scale: 1.5 });
 
-        const canvas = canvasRef.current;
-        if (!canvas || cancelled) return;
-        const context = canvas.getContext('2d');
-        if (!context) return;
+      const canvas = canvasRef.current;
+      if (!canvas || cancelled) return;
+      const context = canvas.getContext('2d');
+      if (!context) return;
 
-        canvas.height = viewport.height;
-        canvas.width = viewport.width;
+      canvas.height = viewport.height;
+      canvas.width = viewport.width;
 
-        renderTask = page.render({ canvasContext: context, viewport });
-        await renderTask.promise;
+      renderTask = page.render({ canvasContext: context, viewport });
+      await renderTask.promise;
     };
 
     loadPdf().catch(console.error);
