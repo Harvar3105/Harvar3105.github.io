@@ -22,7 +22,7 @@ export default function Header() {
     <header
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-[var(--border)] px-5 backdrop-blur ${
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-[var(--border)] px-5 backdrop-blur bg-black/30 ${
         isHidden ? "h-10" : "h-16"
       }`}
     >
