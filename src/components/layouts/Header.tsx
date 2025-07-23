@@ -30,11 +30,11 @@ export default function Header() {
                 <nav className={`absolute inset-0 flex items-center justify-between transition-opacity duration-[750ms] ${
                             isHidden ? 'opacity-0 pointer-events-none' : 'opacity-100'
                         }`}>
-                    <div className="flex items-center space-x-10">
+                    <div className="flex items-center space-x-10 z-10">
                         <ThemeSwitcher />
                         <FirefliesSetter />
                     </div>
-                    <ul className="flex justify-center">
+                    <ul className="absolute left-1/2 transform -translate-x-[50%] flex space-x-6 z-10">
                     <li>
                         <Link href="/" className={navButtonsStyle}>
                             {t('home')}
@@ -61,7 +61,9 @@ export default function Header() {
                         </Link>
                     </li>
                     </ul>
-                    <LanguageSwitcher/>
+                    <div className="z-10">
+                        <LanguageSwitcher/>
+                    </div>
                 </nav>
                 <div
                     className={`absolute inset-x-0 bottom-[-8px] flex justify-center transition-opacity duration-[750ms] ${
