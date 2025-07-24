@@ -8,10 +8,10 @@ export default function Footer() {
   const linkedInUrl = process.env.LINKEDIN_URL;
   const githubUrl = process.env.GH_URL;
   const iconsSize = 24;
-  const iconsStyle = "text-[var(--grey-icons)] hover:text-[var(--accent-color)]";
+  const iconsStyle = "text-[var(--grey-icons)] hover:text-[var(--accent-color)] text-2xl md:text-3xl";
 
   return (
-    <footer className="w-full py-6 text-sm text-center border-t border-gray-300 dark:border-gray-700 backdrop-blur">
+    <footer className="w-full py-6 md:text-base sm:text-sm text-center border-t border-gray-300 dark:border-gray-700 backdrop-blur px-3">
       <div className="flex justify-center gap-4 mb-2">
         <a
           href={githubUrl}
@@ -20,7 +20,7 @@ export default function Footer() {
           aria-label="GitHub"
           className={iconsStyle}
         >
-          <FaGithub size={iconsSize} />
+          <FaGithub />
         </a>
 
         <a
@@ -30,7 +30,7 @@ export default function Footer() {
           aria-label="LinkedIn"
           className={iconsStyle}
         >
-          <FaLinkedin size={iconsSize} />
+          <FaLinkedin />
         </a>
 
         <a
@@ -40,7 +40,7 @@ export default function Footer() {
           aria-label="Email"
           className={iconsStyle}
         >
-          <FaMailBulk size={iconsSize} />
+          <FaMailBulk />
         </a>
       </div>
       <p className="text-gray-500">

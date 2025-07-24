@@ -10,29 +10,29 @@ export default function Home({params} : {params: Promise<{locale: string}>;}) {
   const t = useTranslations('Home');
 
   return (
-    <div className="items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="h-full px-8 font-[family-name:var(--font-geist-sans)]">
 
-      <div className="relative w-full h-100">
-        <span className="absolute bottom-0 left-10">
-          <h3 className="text-xl">
+      <div className="flex flex-col-reverse w-full h-60 md:h-75 lg:h-100">
+        <span className="md:px-10">
+          <h3 className="md:text-xl text-lg">
             {t("about")}
           </h3>
-          <h1 className="text-6xl font-bold">
+          <h1 className="md:text-6xl text-4xl font-bold">
             {t("name")}
           </h1>
         </span>
       </div>
 
-      <div className="relative w-full h-50 pt-20">
-        <span className="absolute bottom-0 right-10 text-right">
-          <h3 className="text-3xl font-bold">
+      <div className="flex flex-col md:pt-10 pt-3">
+        <span className="md:x-10 text-right">
+          <h3 className="md:text-4xl text-2xl font-bold">
             {t("about_me_header")}
           </h3>
-          <h1 className="">
+          <h1 className="md:text-lg text-base">
             {t("about_me")}
           </h1>
           <br/>
-          <h1 className="">
+          <h1 className="md:text-lg text-base">
             {t("passion")}
           </h1>
         </span>

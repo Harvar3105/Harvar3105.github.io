@@ -11,8 +11,8 @@ export default function Contacts({params}: {params: Promise<{locale: string}>;})
   const t = useTranslations('Contact');
 
   return (
-    <div className="items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <h1 className='text-xl font-bold mb-4'>{t("form_name")}</h1>
+    <div className="items-center justify-items-center md:pt-16 pt-8 px-5 min-h-screen font-[family-name:var(--font-geist-sans)]">
+      <h1 className='md:text-4xl text-2xl font-bold md:mb-8 mb-4'>{t("form_name")}</h1>
       <EmailSender />
       <Fireflies count={50} />
     </div>

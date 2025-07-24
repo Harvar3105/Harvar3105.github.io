@@ -30,7 +30,7 @@ export default function ThemeSwitcher() {
   return (
     <button
       onClick={toggleTheme}
-      className="ml-2 w-10 h-10 rounded-full bg-[var(--accent-color)] flex items-center justify-center"
+      className="w-10 h-10 rounded-full bg-[var(--accent-color)] flex items-center justify-center"
       title="Сменить тему"
     >
       {theme === "dark" ?

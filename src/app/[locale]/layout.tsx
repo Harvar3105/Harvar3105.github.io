@@ -35,7 +35,6 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: Promise<{locale: string}>;
 }) {
-  // Ensure that the incoming `locale` is valid
   const {locale} = await params;
   if (!hasLocale(routing.locales, locale)) {
     notFound();
@@ -44,7 +43,7 @@ export default async function LocaleLayout({
   return (
     <NextIntlClientProvider locale={locale}>
       <Header />
-      <main className="flex-grow">{children}</main>
+      <main className="flex-grow pt-16 min-h-[calc(100vh-100px)] md:min-h-screen">{children}</main>
       <Footer />
     </NextIntlClientProvider>
   );

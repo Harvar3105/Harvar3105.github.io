@@ -36,52 +36,54 @@ export default function EmailSender() {
     }
   };
 
+  const fieldStyle = "border md:p-4 p-2 w-full rounded md:text-lg text-base";
+
   return (
     <form ref={form} onSubmit={sendEmail} className="space-y-4 max-w-md">
       <input
         type="text"
         name="from_name"
         placeholder={t("Form.name")}
-        className="border p-2 w-full rounded"
+        className={fieldStyle}
         required
       />
       <input
         type="email"
         name="reply_to"
         placeholder={t("Form.email")}
-        className="border p-2 w-full rounded"
+        className={fieldStyle}
         required
       />
       <input
         type="text"
         name="subject"
         placeholder={t("Form.subject")}
-        className="border p-2 w-full rounded"
+        className={fieldStyle}
         required
       />
       <textarea
         name="message"
         placeholder={t("Form.message")}
-        className="border p-2 w-full rounded h-32"
+        className={` ${fieldStyle} h-32`}
         required
       />
       <div className='flex flex-col space-y-4'>
         <button
           type="submit"
-          className={ "text-white px-4 py-2 rounded " + (!isLoading ? "bg-blue-500 dark:hover:bg-blue-800 hover:bg-blue-300" : "")}
+          className={ "text-white " + fieldStyle + (!isLoading ? " bg-blue-500 dark:hover:bg-blue-800 hover:bg-blue-300" : "")}
           disabled={isLoading}
         >
           {isLoading ? <LoadingWidget /> : t("Form.send")}
         </button>
         { !isLoading &&
-                <button
-                  type="button"
-                  className="bg-red-500 text-white px-4 py-2 rounded dark:hover:bg-red-800 hover:bg-red-300"
-                  onClick={handleReset}
-                  disabled={isLoading}
-                >
-                  {t("Form.reset")}
-                </button>
+            <button
+              type="button"
+              className={`${fieldStyle} bg-red-500 text-white dark:hover:bg-red-800 hover:bg-red-300`}
+              onClick={handleReset}
+              disabled={isLoading}
+            >
+              {t("Form.reset")}
+            </button>
         }
       </div>
     </form>

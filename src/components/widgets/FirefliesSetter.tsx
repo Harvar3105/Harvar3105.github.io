@@ -14,7 +14,7 @@ export default function FirefliesSetter() {
   };
 
   return (
-    <div className="ml-2 px-3 h-10 text-gray-600 rounded-full bg-[var(--accent-color)] flex items-center justify-center">
+    <div className="px-3 h-10 text-gray-600 rounded-full bg-[var(--accent-color)] flex items-center justify-center">
       <img src="/firefly.svg" alt="Firefly svg" className="w-8 h-8" />
       <input
         type="number"

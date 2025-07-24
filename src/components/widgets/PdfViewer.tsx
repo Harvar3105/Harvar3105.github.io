@@ -1,13 +1,13 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-// import { getDocument, GlobalWorkerOptions } from 'pdfjs-dist';
 import 'pdfjs-dist/web/pdf_viewer.css';
 
 
 
 export default function PdfViewer({ url }: { url: string }) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -20,7 +20,8 @@ export default function PdfViewer({ url }: { url: string }) {
 
       const pdf = await pdfjsLib.getDocument(url).promise;
       const page = await pdf.getPage(1);
-      const viewport = page.getViewport({ scale: 1.5 });
+
+      const viewport = page.getViewport({ scale: 1 });
 
       const canvas = canvasRef.current;
       if (!canvas || cancelled) return;
@@ -44,5 +45,9 @@ export default function PdfViewer({ url }: { url: string }) {
     };
   }, [url]);
 
-  return <canvas ref={canvasRef} />;
+  return (
+    <div ref={containerRef} className="w-full max-w-4xl px-4 py-10">
+      <canvas ref={canvasRef} className="mx-auto block" />
+    </div>
+  );
 }

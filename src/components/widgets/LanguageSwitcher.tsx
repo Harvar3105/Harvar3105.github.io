@@ -3,18 +3,32 @@
 import { useLocale } from "next-intl";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function LanguageSwitcher() {
   const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
   const currentLocale = useLocale();
   const pathname = usePathname().replace('/' + currentLocale, "");
 
   const toggleDropdown = () => setIsOpen((prev) => !prev);
-  const closeDropdown = () => setIsOpen(false);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
-    <div  className="relative inline-block text-left">
+    <div ref={dropdownRef} className="relative inline-block text-left">
       <button
         onClick={toggleDropdown}
         type="button"
@@ -30,7 +44,7 @@ export default function LanguageSwitcher() {
           <div className="py-1">
             <Link
               href={"/en" + pathname}
-              onClick={closeDropdown}
+              onClick={() => setIsOpen(false)}
               className="flex items-center w-full px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-[#43454d]"
             >
           EN English
@@ -38,7 +52,7 @@ export default function LanguageSwitcher() {
 
             <Link
               href={"/ru" + pathname}
-              onClick={closeDropdown}
+              onClick={() => setIsOpen(false)}
               className="flex items-center w-full px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-[#43454d]"
             >
           RU Русский

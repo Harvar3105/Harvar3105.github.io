@@ -3,9 +3,9 @@
 import { useState } from 'react';
 
 interface FileDownloaderProps {
-  url: string;            // Путь к файлу на сервере (можно абсолютный или относительный)
-  filename?: string;      // Имя файла при сохранении (опционально)
-  label?: string;         // Текст на кнопке (опционально)
+  url: string;
+  filename?: string;
+  label?: string;
 }
 
 export default function FileDownloader({
@@ -44,7 +44,7 @@ export default function FileDownloader({
     <button
       onClick={handleDownload}
       disabled={loading}
-      className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 disabled:opacity-50"
+      className="bg-blue-600 text-white md:px-6 px-4 md:py-6 py-4 md:text-xl text-lg rounded hover:bg-blue-700 disabled:opacity-50"
     >
       {loading ? 'Loading...' : label}
     </button>
