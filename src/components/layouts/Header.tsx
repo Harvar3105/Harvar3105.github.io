@@ -51,10 +51,7 @@ export default function Header() {
       {/* Desktop and tablet navigation */}
       <div className="relative w-full h-full">
         <nav
-          className={` hidden md:flex
-            absolute inset-0 items-center justify-between transition-opacity duration-[750ms] ${
-              isHidden ? "opacity-0 pointer-events-none" : "opacity-100"
-            }`}
+          className={` hidden md:flex absolute inset-0 items-center justify-between transition-opacity duration-[750ms] ${isHidden ? "opacity-0 pointer-events-none" : "opacity-100"}`}
         >
           <div className="flex items-center ml-5 lg:space-x-10 md:space-x-5 z-50">
             <ThemeSwitcher />
