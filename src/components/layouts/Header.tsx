@@ -11,7 +11,8 @@ import FirefliesSetter from "../widgets/FirefliesSetter";
 export default function Header() {
   const navButtonsStyle =
     "inline-flex items-center justify-center text-lg font-medium hover:text-[var(--hover-text)] hover:bg-[var(--hover-background)] py-3 lg:px-5 md:px-3 border-b-2 hover:border-b-[var(--accent-color)] border-transparent";
-  const navMobileButtonsStyle = "inline-flex items-center justify-center text-base font-medium w-full text-center py-3 border-b-1 border-b-[var(--accent-color)]";
+  const navMobileButtonsStyle =
+    "inline-flex items-center justify-center text-base font-medium w-full text-center py-3 border-b-1 border-b-[var(--accent-color)]";
 
   const t = useTranslations("Navigation");
   const scrollDirection = useScrollDirection();
@@ -24,20 +25,20 @@ export default function Header() {
   const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-      const handleClickOutside = (event: MouseEvent) => {
-        if (
-          dropdownRef.current &&
-          !dropdownRef.current.contains(event.target as Node) &&
-          menuButtonRef.current &&
-          !menuButtonRef.current.contains(event.target as Node)
-        ) {
-          setMenuOpen(false);
-        }
-      };
-  
-      document.addEventListener("mousedown", handleClickOutside);
-      return () => document.removeEventListener("mousedown", handleClickOutside);
-    }, []);
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node) &&
+        menuButtonRef.current &&
+        !menuButtonRef.current.contains(event.target as Node)
+      ) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <header
@@ -52,8 +53,8 @@ export default function Header() {
         <nav
           className={` hidden md:flex
             absolute inset-0 items-center justify-between transition-opacity duration-[750ms] ${
-            isHidden ? "opacity-0 pointer-events-none" : "opacity-100"
-          }`}
+              isHidden ? "opacity-0 pointer-events-none" : "opacity-100"
+            }`}
         >
           <div className="flex items-center ml-5 lg:space-x-10 md:space-x-5 z-50">
             <ThemeSwitcher />
@@ -92,10 +93,10 @@ export default function Header() {
         </nav>
 
         <nav
-        className={` flex md:hidden
+          className={` flex md:hidden
           absolute inset-0 items-center justify-between transition-opacity duration-[750ms] ${
-          isHidden ? "opacity-0 pointer-events-none" : "opacity-100"
-        }`}
+            isHidden ? "opacity-0 pointer-events-none" : "opacity-100"
+          }`}
         >
           <div className="flex items-center space-x-5 z-50">
             <ThemeSwitcher />
@@ -103,10 +104,10 @@ export default function Header() {
             <LanguageSwitcher />
           </div>
           <button
-          ref={menuButtonRef}
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="p-2 rounded focus:outline-none text-white"
-          aria-label="Toggle menu"
+            ref={menuButtonRef}
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="p-2 rounded focus:outline-none text-white"
+            aria-label="Toggle menu"
           >
             <svg
               className="w-10 h-10"
@@ -134,12 +135,35 @@ export default function Header() {
           </button>
 
           {menuOpen && (
-            <ul ref={dropdownRef} className="absolute top-16 left-0 w-full flex flex-col bg-black/90 md:hidden z-50 backdrop-blur">
-              <li><Link href="/" className={`${navMobileButtonsStyle}`}>{t("home")}</Link></li>
-              <li><Link href="/skills" className={`${navMobileButtonsStyle}`}>{t("about")}</Link></li>
-              <li><Link href="/projects" className={`${navMobileButtonsStyle}`}>{t("projects")}</Link></li>
-              <li><Link href="/contacts" className={`${navMobileButtonsStyle}`}>{t("contact")}</Link></li>
-              <li><Link href="/cv" className={`${navMobileButtonsStyle}`}>{t("cv")}</Link></li>
+            <ul
+              ref={dropdownRef}
+              className="absolute top-16 left-0 w-full flex flex-col bg-black/90 md:hidden z-50 backdrop-blur"
+            >
+              <li>
+                <Link href="/" className={`${navMobileButtonsStyle}`}>
+                  {t("home")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/skills" className={`${navMobileButtonsStyle}`}>
+                  {t("about")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/projects" className={`${navMobileButtonsStyle}`}>
+                  {t("projects")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/contacts" className={`${navMobileButtonsStyle}`}>
+                  {t("contact")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/cv" className={`${navMobileButtonsStyle}`}>
+                  {t("cv")}
+                </Link>
+              </li>
             </ul>
           )}
         </nav>
