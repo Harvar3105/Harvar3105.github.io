@@ -90,10 +90,7 @@ export default function Header() {
         </nav>
 
         <nav
-          className={` flex md:hidden
-          absolute inset-0 items-center justify-between transition-opacity duration-[750ms] ${
-            isHidden ? "opacity-0 pointer-events-none" : "opacity-100"
-          }`}
+          className={` flex md:hidden absolute inset-0 items-center justify-between transition-opacity duration-[750ms] ${isHidden ? "opacity-0 pointer-events-none" : "opacity-100"}`}
         >
           <div className="flex items-center space-x-5 z-50">
             <ThemeSwitcher />
