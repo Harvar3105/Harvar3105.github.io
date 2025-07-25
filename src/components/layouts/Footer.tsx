@@ -44,6 +44,10 @@ export default function Footer() {
         </a>
       </div>
       <p className="text-gray-500">{t("authorship")}</p>
+      <p className="text-gray-500">
+        {t("icons_and_illustrations") + " "}
+        <a href="http://www.freepik.com">Designed by Freepik</a>
+      </p>
     </footer>
   );
 }

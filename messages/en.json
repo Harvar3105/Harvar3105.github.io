@@ -7,7 +7,8 @@
     "cv": "CV"
   },
   "Footer": {
-    "authorship": "© 2025 Jüri Petrotšenko. Made with ♥️ on Next.js and Tailwind CSS"
+    "authorship": "© 2025 Jüri Petrotšenko. Made with ♥️ on Next.js and Tailwind CSS",
+    "icons_and_illustrations": "Icons and illustrations:"
   },
   "Metadata": {
     "title": "Portfolio",

@@ -90,6 +90,13 @@ jobs:
         with:
           path: ./dist
 
+  generateMeta:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Generate sitemap and robots
+        run: npm run postbuild
+
   # Deployment job
   deploy:
     environment:

@@ -6,6 +6,7 @@ import {NextIntlClientProvider, hasLocale} from 'next-intl';
 import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
 import {getTranslations } from "next-intl/server";
+import { Viewport } from "next";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({locale}));
@@ -15,17 +16,62 @@ export async function generateMetadata({params}: {params: Promise<{locale: strin
   const {locale} = await params;
   const t = await getTranslations({locale, namespace: 'Metadata'});
 
-  return {
-    title: t('title'),
-    charSet: "UTF-8",
-    description: t("description"),
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL!;
+  const title = t('title');
+  const description = t("description");
+  const ogImage = `${siteUrl}/og-preview.png`;
+
+return {
+    title,
+    description,
     keywords: "HTML, CSS, JavaScript, JS, TypeScript, TS, React, " + t("keywords"),
-    author: "Jüri Petrotšenko",
-    viewport: "width=device-width, initial-scale=1.0",
+    metadataBase: new URL(siteUrl),
+    alternates: {
+      canonical: '/',
+      languages: {
+        en: '/en',
+        ru: '/ru',
+      },
+    },
+    openGraph: {
+      title,
+      description,
+      url: siteUrl,
+      siteName: "Portfolio",
+      locale,
+      type: 'website',
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [ogImage],
+      // creator: '@twitterHandle'
+    },
+    authors: [{ name: "Jüri Petrotšenko" }],
     icons: {
-      icon: '/favicon.ico'
-    }
+      icon: '/favicon.ico',
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
   };
+}
+
+export function generateViewport(): Viewport {
+  return {
+    width: "device-width",
+    initialScale: 1
+  }
 }
 
 export default async function LocaleLayout({
