@@ -2,35 +2,40 @@ import "../globals.css";
 import Footer from "@/components/layouts/Footer";
 import Header from "@/components/layouts/Header";
 
-import {NextIntlClientProvider, hasLocale} from 'next-intl';
-import {notFound} from 'next/navigation';
-import {routing} from '@/i18n/routing';
-import {getTranslations } from "next-intl/server";
+import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { notFound } from "next/navigation";
+import { routing } from "@/i18n/routing";
+import { getTranslations } from "next-intl/server";
 import { Viewport } from "next";
 
 export function generateStaticParams() {
-  return routing.locales.map((locale) => ({locale}));
+  return routing.locales.map((locale) => ({ locale }));
 }
 
-export async function generateMetadata({params}: {params: Promise<{locale: string}>;}) {
-  const {locale} = await params;
-  const t = await getTranslations({locale, namespace: 'Metadata'});
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Metadata" });
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL!;
-  const title = t('title');
+  const title = t("title");
   const description = t("description");
   const ogImage = `${siteUrl}/og-preview.png`;
 
-return {
+  return {
     title,
     description,
-    keywords: "HTML, CSS, JavaScript, JS, TypeScript, TS, React, " + t("keywords"),
+    keywords:
+      "HTML, CSS, JavaScript, JS, TypeScript, TS, React, " + t("keywords"),
     metadataBase: new URL(siteUrl),
     alternates: {
-      canonical: '/',
+      canonical: "/",
       languages: {
-        en: '/en',
-        ru: '/ru',
+        en: "/en",
+        ru: "/ru",
       },
     },
     openGraph: {
@@ -39,7 +44,7 @@ return {
       url: siteUrl,
       siteName: "Portfolio",
       locale,
-      type: 'website',
+      type: "website",
       images: [
         {
           url: ogImage,
@@ -50,7 +55,7 @@ return {
       ],
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title,
       description,
       images: [ogImage],
@@ -58,7 +63,7 @@ return {
     },
     authors: [{ name: "Jüri Petrotšenko" }],
     icons: {
-      icon: '/favicon.ico',
+      icon: "/favicon.ico",
     },
     robots: {
       index: true,
@@ -70,18 +75,18 @@ return {
 export function generateViewport(): Viewport {
   return {
     width: "device-width",
-    initialScale: 1
-  }
+    initialScale: 1,
+  };
 }
 
 export default async function LocaleLayout({
   children,
-  params
+  params,
 }: {
   children: React.ReactNode;
-  params: Promise<{locale: string}>;
+  params: Promise<{ locale: string }>;
 }) {
-  const {locale} = await params;
+  const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
@@ -89,7 +94,9 @@ export default async function LocaleLayout({
   return (
     <NextIntlClientProvider locale={locale}>
       <Header />
-      <main className="flex-grow pt-16 min-h-[calc(100vh-100px)] md:min-h-screen">{children}</main>
+      <main className="flex-grow pt-16 min-h-[calc(100vh-100px)] md:min-h-screen">
+        {children}
+      </main>
       <Footer />
     </NextIntlClientProvider>
   );
