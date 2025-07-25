@@ -6,6 +6,7 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { getTranslations } from "next-intl/server";
+import { Viewport } from "next";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -71,12 +72,12 @@ export async function generateMetadata({
   };
 }
 
-// export function generateViewport(): Viewport {
-//   return {
-//     width: "device-width",
-//     initialScale: 1,
-//   };
-// }
+export function generateViewport(): Viewport {
+  return {
+    width: "device-width",
+    initialScale: 1,
+  };
+}
 
 export default async function LocaleLayout({
   children,

@@ -86,7 +86,7 @@ jobs:
     needs: build
     steps:
       - name: Generate sitemap and robots
-        run: npm run postbuild
+        run: npm run gen_sitemap
 
   # Deployment job
   deploy:

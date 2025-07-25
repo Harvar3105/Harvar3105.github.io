@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
-    "postbuild": "next-sitemap"
+    "gen_sitemap": "next-sitemap"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
