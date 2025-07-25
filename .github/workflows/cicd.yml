@@ -73,16 +73,6 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
-
-      - name: Check i18n files
-        run: ls src/i18n
-      - name: Check localizations
-        run: ls messages
-      - name: Print working directory
-        run: pwd
-      - name: Check request.ts absolute path
-        run: ls -la $(pwd)/src/i18n/request.ts
-
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Upload artifact
