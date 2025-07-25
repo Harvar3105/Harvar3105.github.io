@@ -20,7 +20,7 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Metadata" });
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL!;
+  const siteUrl = process.env.SITE_URL!;
   const title = t("title");
   const description = t("description");
   const ogImage = `${siteUrl}/og-preview.png`;
