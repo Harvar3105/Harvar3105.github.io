@@ -10,7 +10,9 @@
     "authorship": "© 2025 Jüri Petrotšenko. Made with ♥️ on Next.js and Tailwind CSS"
   },
   "Metadata": {
-    "title": "Portfolio"
+    "title": "Portfolio",
+    "description": "Site - portfolio",
+    "keywords": "Portfolio, Software Developer, Junior"
   },
   "Home":{
     "about": "Recent Bachelor's graduate in IT Systems Development",
