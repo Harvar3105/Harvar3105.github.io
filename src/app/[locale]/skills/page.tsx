@@ -1,11 +1,15 @@
-import {use} from 'react';
-import {setRequestLocale} from 'next-intl/server';
-import Fireflies from '@/components/animations/fireflies';
-import StarRating from '@/components/widgets/StarRating';
-import { useTranslations } from 'next-intl';
+import { use } from "react";
+import { setRequestLocale } from "next-intl/server";
+import StarRating from "@/components/widgets/StarRating";
+import { useTranslations } from "next-intl";
+import FirefliesConsumer from "@/components/consumers/FirefliesConsumer";
 
-export default function About({params}: {params: Promise<{locale: string}>;}) {
-  const {locale} = use(params);
+export default function About({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = use(params);
   setRequestLocale(locale);
 
   const t = useTranslations("Skills");
@@ -15,19 +19,23 @@ export default function About({params}: {params: Promise<{locale: string}>;}) {
   const tableBg = "bg-[var(--background)] md:w-fit w-full";
   const tableShape = "overflow-hidden rounded-xl border border-[var(--border)]";
   const tableStyle = "table-auto w-full text-left border-collapse";
-  const tableHeadStyle = "md:text-xl text-lg bg-[var(--hover-background)] text-[var(--hover-text)]";
+  const tableHeadStyle =
+    "md:text-xl text-lg bg-[var(--hover-background)] text-[var(--hover-text)]";
 
   return (
-    <div className='items-center justify-items-center min-h-screen px-8 pb-20 font-[family-name:var(--font-geist-sans)]'>
-
+    <div className="items-center justify-items-center min-h-screen px-8 pb-20 font-[family-name:var(--font-geist-sans)]">
       <h1 className={tableTitleStyle}>{t("Fields.header")}</h1>
       <div className={tableBg}>
         <div className={tableShape}>
           <table className={tableStyle}>
             <thead className={tableHeadStyle}>
               <tr>
-                <th className={`${cellStyle} text-center`}>{t("Fields.Head.field")}</th>
-                <th className={`${cellStyle} text-center`}>{t("Fields.Head.techs")}</th>
+                <th className={`${cellStyle} text-center`}>
+                  {t("Fields.Head.field")}
+                </th>
+                <th className={`${cellStyle} text-center`}>
+                  {t("Fields.Head.techs")}
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -38,7 +46,9 @@ export default function About({params}: {params: Promise<{locale: string}>;}) {
               </tr>
               <tr>
                 <td className={cellStyle}>{t("Fields.Body.server")}</td>
-                <td className={cellStyle}>dotnet Web Api, NodeJS, SpringCore, JakartaServlet</td>
+                <td className={cellStyle}>
+                  dotnet Web Api, NodeJS, SpringCore, JakartaServlet
+                </td>
               </tr>
               <tr>
                 <td className={cellStyle}>{t("Fields.Body.crosp")}</td>
@@ -50,7 +60,9 @@ export default function About({params}: {params: Promise<{locale: string}>;}) {
               </tr>
               <tr>
                 <td className={cellStyle}>{t("Fields.Body.other")}</td>
-                <td className={cellStyle}>Docker, Github Actions, Gitlab CI/CD, Tailwind, Bootstrap</td>
+                <td className={cellStyle}>
+                  Docker, Github Actions, Gitlab CI/CD, Tailwind, Bootstrap
+                </td>
               </tr>
             </tbody>
           </table>
@@ -63,8 +75,12 @@ export default function About({params}: {params: Promise<{locale: string}>;}) {
           <table className={tableStyle}>
             <thead className={tableHeadStyle}>
               <tr>
-                <th className={`${cellStyle} text-center md:px-5`}>{t("Prog_langs.Head.lang")}</th>
-                <th className={`${cellStyle} text-center md:px-10`}>{t("Prog_langs.Head.knowledge")}</th>
+                <th className={`${cellStyle} text-center md:px-5`}>
+                  {t("Prog_langs.Head.lang")}
+                </th>
+                <th className={`${cellStyle} text-center md:px-10`}>
+                  {t("Prog_langs.Head.knowledge")}
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -72,7 +88,7 @@ export default function About({params}: {params: Promise<{locale: string}>;}) {
                 <td className={cellStyle}>C#</td>
                 <td className={cellStyle}>
                   <div className="flex justify-end">
-                    <StarRating total={5} filled={4} isLtr={true}/>
+                    <StarRating total={5} filled={4} isLtr={true} />
                   </div>
                 </td>
               </tr>
@@ -80,7 +96,7 @@ export default function About({params}: {params: Promise<{locale: string}>;}) {
                 <td className={cellStyle}>Java</td>
                 <td className={cellStyle}>
                   <div className="flex justify-end">
-                    <StarRating total={5} filled={4} isLtr={true}/>
+                    <StarRating total={5} filled={4} isLtr={true} />
                   </div>
                 </td>
               </tr>
@@ -88,7 +104,7 @@ export default function About({params}: {params: Promise<{locale: string}>;}) {
                 <td className={cellStyle}>Python</td>
                 <td className={cellStyle}>
                   <div className="flex justify-end">
-                    <StarRating total={5} filled={3} isLtr={true}/>
+                    <StarRating total={5} filled={3} isLtr={true} />
                   </div>
                 </td>
               </tr>
@@ -96,7 +112,7 @@ export default function About({params}: {params: Promise<{locale: string}>;}) {
                 <td className={cellStyle}>Kotlin</td>
                 <td className={cellStyle}>
                   <div className="flex justify-end">
-                    <StarRating total={5} filled={3} isLtr={true}/>
+                    <StarRating total={5} filled={3} isLtr={true} />
                   </div>
                 </td>
               </tr>
@@ -104,7 +120,7 @@ export default function About({params}: {params: Promise<{locale: string}>;}) {
                 <td className={cellStyle}>PHP</td>
                 <td className={cellStyle}>
                   <div className="flex justify-end">
-                    <StarRating total={5} filled={2} isLtr={true}/>
+                    <StarRating total={5} filled={2} isLtr={true} />
                   </div>
                 </td>
               </tr>
@@ -112,7 +128,7 @@ export default function About({params}: {params: Promise<{locale: string}>;}) {
                 <td className={cellStyle}>JavaScript</td>
                 <td className={cellStyle}>
                   <div className="flex justify-end">
-                    <StarRating total={5} filled={3} isLtr={true}/>
+                    <StarRating total={5} filled={3} isLtr={true} />
                   </div>
                 </td>
               </tr>
@@ -120,7 +136,7 @@ export default function About({params}: {params: Promise<{locale: string}>;}) {
                 <td className={cellStyle}>Dart</td>
                 <td className={cellStyle}>
                   <div className="flex justify-end">
-                    <StarRating total={5} filled={3} isLtr={true}/>
+                    <StarRating total={5} filled={3} isLtr={true} />
                   </div>
                 </td>
               </tr>
@@ -128,7 +144,7 @@ export default function About({params}: {params: Promise<{locale: string}>;}) {
                 <td className={cellStyle}>PL/SQL</td>
                 <td className={cellStyle}>
                   <div className="flex justify-end">
-                    <StarRating total={5} filled={3} isLtr={true}/>
+                    <StarRating total={5} filled={3} isLtr={true} />
                   </div>
                 </td>
               </tr>
@@ -143,8 +159,12 @@ export default function About({params}: {params: Promise<{locale: string}>;}) {
           <table className={tableStyle}>
             <thead className={tableHeadStyle}>
               <tr>
-                <th className={`${cellStyle} text-center`}>{t("Languages.Head.lang")}</th>
-                <th className={`${cellStyle} text-center md:px-15`}>{t("Languages.Head.lvl")}</th>
+                <th className={`${cellStyle} text-center`}>
+                  {t("Languages.Head.lang")}
+                </th>
+                <th className={`${cellStyle} text-center md:px-15`}>
+                  {t("Languages.Head.lvl")}
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -185,17 +205,13 @@ export default function About({params}: {params: Promise<{locale: string}>;}) {
               <tr>
                 <td className={cellStyle}>{t("Other.modeling")}</td>
                 <td className={cellStyle}>
-                  <div className="flex justify-end">
-                      Blender
-                  </div>
+                  <div className="flex justify-end">Blender</div>
                 </td>
               </tr>
               <tr>
                 <td className={cellStyle}>{t("Other.game_dev")}</td>
                 <td className={cellStyle}>
-                  <div className="flex justify-end">
-                      Unity
-                  </div>
+                  <div className="flex justify-end">Unity</div>
                 </td>
               </tr>
             </tbody>
@@ -203,8 +219,7 @@ export default function About({params}: {params: Promise<{locale: string}>;}) {
         </div>
       </div>
 
-      <Fireflies count={50} />
+      <FirefliesConsumer />
     </div>
   );
-
 }
