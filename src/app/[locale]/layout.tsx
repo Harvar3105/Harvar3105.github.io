@@ -2,10 +2,9 @@ import "../globals.css";
 import Footer from "@/components/layouts/Footer";
 import Header from "@/components/layouts/Header";
 
-import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { NextIntlClientProvider, hasLocale, useTranslations } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-import { getTranslations } from "next-intl/server";
 import { Viewport } from "next";
 
 export function generateStaticParams() {
@@ -18,7 +17,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "Metadata" });
+  const t = useTranslations("Metadata" );
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL!;
   const title = t("title");
