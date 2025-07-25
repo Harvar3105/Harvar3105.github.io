@@ -7,7 +7,6 @@ import 'pdfjs-dist/web/pdf_viewer.css';
 
 export default function PdfViewer({ url }: { url: string }) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -46,7 +45,7 @@ export default function PdfViewer({ url }: { url: string }) {
   }, [url]);
 
   return (
-    <div ref={containerRef} className="w-full max-w-4xl px-4 py-10">
+    <div className="w-full max-w-4xl px-4 py-10">
       <canvas ref={canvasRef} className="mx-auto block" />
     </div>
   );
