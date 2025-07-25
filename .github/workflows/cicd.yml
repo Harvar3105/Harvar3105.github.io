@@ -55,7 +55,7 @@ jobs:
           cache: ${{ steps.detect-package-manager.outputs.manager }}
 
       - name: Test secret
-        run: ECHO ${{ secrets.TEST_SECRET }}
+        run: echo "Test secret is ${{ secrets.TEST_SECRET }}"
       
       - name: Setup Pages
         uses: actions/configure-pages@v5
