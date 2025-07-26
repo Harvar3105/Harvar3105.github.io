@@ -28,8 +28,16 @@ export async function generateMetadata({
   return {
     title,
     description,
-    keywords:
-      "HTML, CSS, JavaScript, JS, TypeScript, TS, React, " + t("keywords"),
+    keywords: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "TypeScript",
+      "React",
+      t("keywords"),
+    ],
+    applicationName: "Site - Portfolio",
+    category: "portfolio",
     metadataBase: new URL(siteUrl),
     alternates: {
       canonical: "/",
@@ -61,6 +69,7 @@ export async function generateMetadata({
       images: [ogImage],
       // creator: '@twitterHandle'
     },
+    referrer: "origin-when-cross-origin",
     authors: [{ name: "Jüri Petrotšenko" }],
     icons: {
       icon: "/favicon.ico",
