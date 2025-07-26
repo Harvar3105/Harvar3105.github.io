@@ -14,8 +14,14 @@ const geistMono = Geist_Mono({
 export const dynamic = 'force-static';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+
+  const googleVerification = process.env.GOOGLE_SEARCH_ENGINE_VERIFICATION_CODE;
+
   return (
     <html lang="en">
+      <head>
+        <meta name="google-site-verification" content={googleVerification} />
+      </head>
       <FirefliesProvider>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
