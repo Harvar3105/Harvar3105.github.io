@@ -15,7 +15,7 @@ export const dynamic = 'force-static';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 
-  const googleVerification = process.env.GOOGLE_SEARCH_ENGINE_VERIFICATION_CODE;
+  const googleVerification = process.env.NEXT_PUBLIC_GOOGLE_SEARCH_ENGINE_VERIFICATION_CODE;
 
   return (
     <html lang="en">
