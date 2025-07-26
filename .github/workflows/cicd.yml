@@ -83,6 +83,11 @@ jobs:
 
       - name: Generate sitemap and robots.txt
         run: npm run gen_sitemap
+      - name: Copy sitemap and robots.txt to dist
+        run: |
+          mkdir -p dist
+          cp public/sitemap.xml dist/sitemap.xml
+          cp public/robots.txt dist/robots.txt
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
