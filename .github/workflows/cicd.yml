@@ -83,6 +83,8 @@ jobs:
 
       - name: Generate sitemap and robots.txt
         run: npm run gen_sitemap
+        env:
+          NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
       - name: Copy sitemap and robots.txt to dist
         run: |
           mkdir -p dist
