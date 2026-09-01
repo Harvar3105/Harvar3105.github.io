@@ -101,12 +101,12 @@ export default async function LocaleLayout({
   }
 
   return (
-    <NextIntlClientProvider locale={locale}>
-      <Header />
-      <main className="flex-grow pt-16 min-h-[calc(100vh-100px)] md:min-h-screen">
+    <div className="min-h-screen flex flex-col">
+      <NextIntlClientProvider locale={locale}>
+        <Header />
         {children}
-      </main>
-      <Footer />
-    </NextIntlClientProvider>
+        <Footer />
+      </NextIntlClientProvider>
+    </div>
   );
 }

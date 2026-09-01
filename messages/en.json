@@ -1,10 +1,10 @@
 {
   "Navigation": {
+    "logo": "MY PORTFOLIO",
     "home": "Home",
-    "about": "Skills",
+    "experience": "Experience",
     "projects": "Projects",
-    "contact": "Contact",
-    "cv": "CV"
+    "get_in_touch": "Get in touch"
   },
   "Footer": {
     "authorship": "© 2025 Jüri Petrotšenko. Made with ♥️ on Next.js and Tailwind CSS",
@@ -16,11 +16,20 @@
     "keywords": "Portfolio, Software Developer, Junior"
   },
   "Home":{
-    "about": "Recent Bachelor's graduate in IT Systems Development",
+    "welcome": "Welcome to my portfolio website!",
     "name": "Jüri Petrotsenko",
-    "about_me": "Recent Bachelor's graduate in IT Systems from the Tallinn University of Technology (TalTech) in Estonia with solid background in software development and system design. Interested in full-stack development and creation of web and cross-platform applications.",
+    "whoami": "Bachelor's graduate in IT Systems Development",
+    "about_me": "Recent Bachelor's graduate in IT Systems from the Tallinn University of Technology (TalTech) in Estonia with solid background in software development and system design.",
     "about_me_header": "About me:",
-    "passion": "Interested in continued development as a developer by engaging in real projects, learning best practices, and increasing technical skills in a work environment. Currently looking for a short-term job."
+    "eager": "I'm eager to :)",
+    "passion": "Interested in continued development as a developer by engaging in real projects, learning best practices, and increasing technical skills in a work environment. Currently looking for a short-term job.",
+    "lets_build": "Let's build something fascinating!",
+    "looking_for": "Im looking for...",
+    "Buttons": {
+      "contact_me": "Contact me",
+      "to_github": "Watch on GitHub",
+      "linkedIn": "Watch on LinkedIn"
+    }
   },
   "Skills": {
     "Fields": {
