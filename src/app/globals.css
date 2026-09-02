@@ -390,6 +390,17 @@ body {
   background-clip: text;
 }
 
+.gradient-text-inverse {
+  background: linear-gradient(
+    135deg,
+    var(--primary-container) 0%,
+    var(--text-primary) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .skill-bar-fill {
   transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
 }

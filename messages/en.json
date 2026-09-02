@@ -31,64 +31,49 @@
       "linkedIn": "Watch on LinkedIn"
     }
   },
-  "Skills": {
-    "Fields": {
-      "header": "Fields",
-      "Head": {
-        "field": "Field",
-        "techs": "Technologies"
-      },
-      "Body": {
-        "web": "Web",
-        "server": "Server",
-        "crosp": "Crossplatform",
-        "db": "Database",
-        "other": "Other"
-      }
+  "Experience": {
+    "header": "Technical Mastery & Experience",
+    "description": "A breakdown of my foundational skills, ongoing learning, and academic background shaping my approach to software engineering.",
+    "Skills": {
+      "section_name": "Terminal icon here",
+      "front": "Frontend Architecture",
+      "back": "Backend & Systems",
+      "infra": "DevOps & Tools"
     },
-    "Prog_langs": {
-      "header": "Programming languages",
-      "Head": {
-        "lang": "Language",
-        "knowledge": "Knowledge"
-      }
+    "Edu": {
+      "section_name": "Education",
+      "date": "Jan 2022 - Jun 2025",
+      "degree": "BSc Computer Science",
+      "uni": "Tallinn University of Technology (TalTech), Estonia",
+      "description": "Focusing on software architecture, algorithms, and human-computer interaction. Active participant in university hackathons and open-source initiatives."
     },
-    "Languages": {
-      "header": "Languages",
-      "Head": {
-        "lang": "Language",
-        "lvl": "Level"
-      },
-      "Body": {
-        "Lang": {
-          "eng": "English",
-          "est": "Estonian",
-          "rus": "Russian"
-        },
-        "Level": {
-          "b2": "B2",
-          "native": "Native"
-        }
-      }
-    },
-    "Other": {
-      "header": "Other",
-      "modeling": "Modeling",
-      "game_dev": "Games development"
+    "Exp": {
+      "section_name": "Experience",
+      "date": "Jan 2025 - Jun 2025",
+      "role": "Software Developer Intern",
+      "company": "Company Name",
+      "description": "about role"
     }
   },
   "Contact":{
-    "form_name": "Contact form",
-    "Form": {
-      "name": "Your name",
-      "email": "Your email",
-      "subject": "Your subject",
-      "message": "Type message here...",
-      "send": "SEND",
-      "reset": "RESET"
-    }
+    "header": "Get in touch",
+    "description": "Whether you're looking to integrate a complex system, architect a new application, or just talk code, I'm ready to collaborate. Open a secure channel below.",
+    "mail_header": "Send a Transmission",
+    "direct_header": "Direct Vectors",
+    "addr": "Tallinn, Estonia (Remote Available)",
+    "cv_header": "Curiculum Vitae",
+    "cv_prom": "Download my complete technical history, stack proficiencies, and project architecture breakdowns.",
+    "download": "Download"
   },
-  "CV": {
-    "download": "Download CV"
+  "Email": {
+    "l_name": "Name",
+    "ph_name": "Your Name",
+    "l_email": "Email",
+    "ph_email": "Your email",
+    "l_subject": "Subject",
+    "ph_subject": "Project injury",
+    "l_message": "Message payload",
+    "ph_message": "Describe your technical reqirenments...",
+    "send": "Transmit message"
   }
 }

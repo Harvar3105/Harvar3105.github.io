@@ -4,7 +4,7 @@
     "home": "Главная",
     "experience": "Навыки",
     "projects": "Проекты",
-    "get_in_touch": "Связаться со мной"
+    "get_in_touch": "Связаться"
   },
   "Footer": {
     "authorship": "© 2025 Jüri Petrotšenko. Сделано с ♥️ на Next.js и Tailwind CSS",
@@ -31,64 +31,49 @@
       "linkedIn": "Посмотреть на LinkedIn"
     }
   },
-  "Skills": {
-    "Fields": {
-      "header": "Области",
-      "Head": {
-        "field": "Область",
-        "techs": "Технологии"
-      },
-      "Body": {
-        "web": "Веб",
-        "server": "Сервер",
-        "crosp": "Кроссплатформа",
-        "db": "База данных",
-        "other": "Другое"
-      }
+  "Experience": {
+    "header": "Technical Mastery & Experience",
+    "description": "A breakdown of my foundational skills, ongoing learning, and academic background shaping my approach to software engineering.",
+    "Skills": {
+      "section_name": "Terminal icon here",
+      "front": "Frontend Architecture",
+      "back": "Backend & Systems",
+      "infra": "DevOps & Tools"
     },
-    "Prog_langs": {
-      "header": "Языки программирования",
-      "Head": {
-        "lang": "Язык",
-        "knowledge": "Знание"
-      }
+    "Edu": {
+      "section_name": "Education",
+      "date": "Jan 2022 - Jun 2025",
+      "degree": "BSc Computer Science",
+      "uni": "Tallinn University of Technology (TalTech), Estonia",
+      "description": "Focusing on software architecture, algorithms, and human-computer interaction. Active participant in university hackathons and open-source initiatives."
     },
-    "Languages": {
-      "header": "Языки",
-      "Head": {
-        "lang": "Язык",
-        "lvl": "Уровень"
-      },
-      "Body": {
-        "Lang": {
-          "eng": "Английский",
-          "est": "Эстонский",
-          "rus": "Русский"
-        },
-        "Level": {
-          "b2": "B2",
-          "native": "Родной"
-        }
-      }
-    },
-    "Other": {
-      "header": "Другое",
-      "modeling": "Моделирование",
-      "game_dev": "Создание игр"
+    "Exp": {
+      "section_name": "Experience",
+      "date": "Jan 2025 - Jun 2025",
+      "role": "Software Developer Intern",
+      "company": "Company Name",
+      "description": "about role"
     }
   },
   "Contact":{
-    "form_name": "Форма связи",
-    "Form": {
-      "name": "Ваше имя",
-      "email": "Ваш адресс электронной почты",
-      "subject": "Ваша тема",
-      "message": "Напишите ваше письмо здесь...",
-      "send": "Отправить",
-      "reset": "Очистить"
-    }
+    "header": "Связаться с автором",
+    "description": "Whether you're looking to integrate a complex system, architect a new application, or just talk code, I'm ready to collaborate. Open a secure channel below.",
+    "mail_header": "Send a Transmission",
+    "direct_header": "Прямые каналы",
+    "addr": "Таллинн, Эстония (Также удалённо)",
+    "cv_header": "Резюме",
+    "cv_prom": "Download my complete technical history, stack proficiencies, and project architecture breakdowns.",
+    "download": "Скачать"
   },
-  "CV": {
-    "download": "Скачать CV"
+  "Email": {
+    "l_name": "Имя",
+    "ph_name": "Ваше ФИО",
+    "l_email": "Почта",
+    "ph_email": "Адрес вашей э-почты",
+    "l_subject": "Тема",
+    "ph_subject": "Тема проекта",
+    "l_message": "Содержание письма",
+    "ph_message": "Опишите ваши ожидания и предпочтения...",
+    "send": "Отправить сообщение"
   }
 }

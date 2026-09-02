@@ -6,6 +6,7 @@ import LogoButton from "../widgets/Buttons/LogoButton";
 import NavigationButton from "../widgets/Buttons/NavigationButton";
 import ThemeSwitcher from "../widgets/Buttons/ThemeSwitcher";
 import { useEffect, useRef, useState } from "react";
+import { Link } from "@/i18n/navigation";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -39,16 +40,22 @@ export default function Header() {
       <nav className="relative w-full min-w-0 mx-auto flex h-20 max-w-container-max items-center justify-between px-gutter">
         <LogoButton />
         <ul className="hidden items-center gap-stack-lg md:flex">
-          <NavigationButton title={"home"} href="/" />
-          <NavigationButton title={"experience"} href="/experience" />
-          <NavigationButton title={"projects"} href="/projects" />
+          <li>
+            <NavigationButton title={"home"} href="/" />
+          </li>
+          <li>
+            <NavigationButton title={"experience"} href="/experience" />
+          </li>
+          <li>
+            <NavigationButton title={"projects"} href="/projects" />
+          </li>
         </ul>
         <div className="hidden items-center gap-4 md:flex">
           <ThemeSwitcher />
           <LanguageSwitcher />
-          <button className="hidden md:flex font-bold btn-primary px-8 py-3 rounded font-label-mono text-label-mono items-center gap-2">
+          <Link href="/contact" className="md:flex font-bold btn-primary px-8 py-3 rounded font-label-mono text-label-mono">
             {t("get_in_touch")}
-          </button>
+          </Link>
         </div>
 
         <button
@@ -89,13 +96,24 @@ export default function Header() {
             className="absolute top-full left-0 w-full border-b border-surface-stroke bg-glass-bg backdrop-blur-md md:hidden"
           >
             <ul className="flex flex-col gap-4 p-gutter">
-              <NavigationButton title={"home"} href="/" />
-              <NavigationButton title={"experience"} href="/experience" />
-              <NavigationButton title={"projects"} href="/projects" />
+              <li>
+                <NavigationButton title={"home"} href="/" />
+              </li>
+              <li>
+                <NavigationButton title={"experience"} href="/experience" />
+              </li>
+              <li>
+                <NavigationButton title={"projects"} href="/projects" />
+              </li>
             </ul>
-            <div className="flex items-center gap-4 border-t border-surface-stroke px-gutter py-4">
-              <ThemeSwitcher />
-              <LanguageSwitcher />
+            <div className="flex items-center justify-between border-t border-surface-stroke px-gutter py-4">
+              <div className="flex items-center gap-4">
+                <ThemeSwitcher />
+                <LanguageSwitcher />
+              </div>
+              <Link href="/contact" className="md:flex font-bold btn-primary px-8 py-3 rounded font-label-mono text-label-mono">
+                {t("get_in_touch")}
+              </Link>
             </div>
           </div>
         )}
