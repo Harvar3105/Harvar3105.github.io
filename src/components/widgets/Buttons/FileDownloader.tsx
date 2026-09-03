@@ -1,17 +1,19 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 interface FileDownloaderProps {
   url: string;
   filename?: string;
-  label?: string;
+  children?: React.ReactNode;
+  style: string;
 }
 
 export default function FileDownloader({
   url,
   filename = 'downloaded-file',
-  label = 'Download'
+  children,
+  style = "bg-blue-600 text-white md:px-6 px-4 md:py-6 py-4 md:text-xl text-lg rounded hover:bg-blue-700 disabled:opacity-50"
 }: FileDownloaderProps) {
   const [loading, setLoading] = useState(false);
 
@@ -44,9 +46,9 @@ export default function FileDownloader({
     <button
       onClick={handleDownload}
       disabled={loading}
-      className="bg-blue-600 text-white md:px-6 px-4 md:py-6 py-4 md:text-xl text-lg rounded hover:bg-blue-700 disabled:opacity-50"
+      className={style}
     >
-      {loading ? 'Loading...' : label}
+      {loading ? 'Loading...' : children}
     </button>
   );
 }
