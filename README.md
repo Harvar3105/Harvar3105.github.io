@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Jüri Petrotšenko — Portfolio
+
+Personal portfolio website for showcasing my background, technical skills, projects, and professional experience as a software developer.
+
+**Live website:** https://harvar3105.github.io/
+
+## Tech Stack
+
+- **Next.js 15** — React framework and application structure
+- **React 19** — UI development
+- **TypeScript** — static typing
+- **Tailwind CSS 4** — styling and responsive layouts
+- **next-intl** — English and Russian localization
+- **EmailJS** — contact form email delivery
+- **next-sitemap** — sitemap and robots.txt generation
+- **GitHub Actions** — automated build and deployment
+- **GitHub Pages** — production hosting
+
+## Features
+
+- Responsive portfolio layout
+- English and Russian versions
+- Projects and professional experience sections
+- Technical skills overview
+- Contact form
+- SEO metadata, canonical URLs, Open Graph data, sitemap and robots.txt
+- Automated deployment to GitHub Pages
+
+## Project Structure
+
+```text
+.
+├── .github/workflows/    # CI/CD workflow for GitHub Pages
+├── messages/             # Localization files
+├── public/               # Static assets and generated site files
+├── src/
+│   ├── app/              # Next.js App Router pages and layouts
+│   ├── components/       # Reusable UI components
+│   └── i18n/             # Internationalization configuration
+├── next.config.ts
+├── next-sitemap.config.js
+├── package.json
+└── tsconfig.json
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js 20+
+- npm
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deployment
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The project is deployed to GitHub Pages using GitHub Actions.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+A push to the `main` branch triggers the deployment workflow, which:
 
-## Learn More
+1. Installs dependencies with npm.
+2. Builds the Next.js application.
+3. Generates the sitemap and `robots.txt`.
+4. Uploads the static build as a GitHub Pages artifact.
+5. Deploys the artifact to GitHub Pages.
 
-To learn more about Next.js, take a look at the following resources:
+The build requires environment variables configured as GitHub Actions secrets, including the site URL and credentials used by the contact form and external profile links.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Localization
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The application currently provides two locales:
 
-## Deploy on Vercel
+- `/en` — English
+- `/ru` — Russian
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Localized content is stored in the `messages/` directory and handled with `next-intl`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Author
+
+**Jüri Petrotšenko**
+
+- GitHub: https://github.com/Harvar3105
+- LinkedIn: available through the portfolio website
+
+## License
+
+This repository contains the source code of my personal portfolio website. The content, personal information, CV, and other personal assets are not intended for redistribution.
