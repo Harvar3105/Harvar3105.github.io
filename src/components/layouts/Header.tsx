@@ -1,28 +1,20 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import LanguageSwitcher from "../widgets/LanguageSwitcher";
-import ThemeSwitcher from "../widgets/ThemeSwitcher";
+import LanguageSwitcher from "../widgets/Buttons/LanguageSwitcher";
+import LogoButton from "../widgets/Buttons/LogoButton";
+import NavigationButton from "../widgets/Buttons/NavigationButton";
+import ThemeSwitcher from "../widgets/Buttons/ThemeSwitcher";
 import { useEffect, useRef, useState } from "react";
-import { useScrollDirection } from "@/hooks/useScrollDirection";
 import { Link } from "@/i18n/navigation";
-import FirefliesSetter from "../widgets/FirefliesSetter";
 
 export default function Header() {
-  const navButtonsStyle =
-    "inline-flex items-center justify-center text-lg font-medium hover:text-[var(--hover-text)] hover:bg-[var(--hover-background)] py-3 lg:px-5 md:px-3 border-b-2 hover:border-b-[var(--accent-color)] border-transparent";
-  const navMobileButtonsStyle =
-    "inline-flex items-center justify-center text-base font-medium w-full text-center py-3 border-b-1 border-b-[var(--accent-color)]";
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   const t = useTranslations("Navigation");
-  const scrollDirection = useScrollDirection();
-  const [isHovered, setIsHovered] = useState(false);
-
-  const isHidden = scrollDirection === "down" && !isHovered;
-
-  const [menuOpen, setMenuOpen] = useState(false);
-  const dropdownRef = useRef<HTMLUListElement>(null);
-  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -37,154 +29,95 @@ export default function Header() {
     };
 
     document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, []);
 
   return (
-    <header
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-[var(--border)] px-5 backdrop-blur bg-black/30 ${
-        isHidden ? "h-10" : "h-16"
-      }`}
-    >
-      {/* Desktop and tablet navigation */}
-      <div className="relative w-full h-full">
-        <nav
-          className={` hidden md:flex absolute inset-0 items-center justify-between transition-opacity duration-[750ms] ${isHidden ? "opacity-0 pointer-events-none" : "opacity-100"}`}
-        >
-          <div className="flex items-center ml-5 lg:space-x-10 md:space-x-5 z-50">
-            <ThemeSwitcher />
-            <FirefliesSetter />
-          </div>
-          <ul className="hidden md:flex  absolute left-1/2 transform -translate-x-[50%] lg:space-x-6 md:space-x-0 z-50">
-            <li>
-              <Link href="/" className={navButtonsStyle}>
-                {t("home")}
-              </Link>
-            </li>
-            <li>
-              <Link href="/skills" className={navButtonsStyle}>
-                {t("about")}
-              </Link>
-            </li>
-            <li>
-              <Link href="/projects" className={navButtonsStyle}>
-                {t("projects")}
-              </Link>
-            </li>
-            <li>
-              <Link href="/contacts" className={navButtonsStyle}>
-                {t("contact")}
-              </Link>
-            </li>
-            <li>
-              <Link href="/cv" className={navButtonsStyle}>
-                {t("cv")}
-              </Link>
-            </li>
-          </ul>
-          <div className="mr-5 z-50">
-            <LanguageSwitcher />
-          </div>
-        </nav>
+    <header className="fixed top-0 z-50 w-full border-b border-surface-stroke bg-glass-bg backdrop-blur-md">
+      <nav className="relative w-full min-w-0 mx-auto flex h-20 max-w-container-max items-center justify-between px-gutter">
+        <LogoButton />
+        <ul className="hidden items-center gap-stack-lg md:flex">
+          <li>
+            <NavigationButton title={"home"} href="/" />
+          </li>
+          <li>
+            <NavigationButton title={"experience"} href="/experience" />
+          </li>
+          <li>
+            <NavigationButton title={"projects"} href="/projects" />
+          </li>
+        </ul>
+        <div className="hidden items-center gap-4 md:flex">
+          <ThemeSwitcher />
+          <LanguageSwitcher />
+          <Link href="/contact" className="md:flex font-bold btn-primary px-8 py-3 rounded font-label-mono text-label-mono">
+            {t("get_in_touch")}
+          </Link>
+        </div>
 
-        <nav
-          className={` flex md:hidden absolute inset-0 items-center justify-between transition-opacity duration-[750ms] ${isHidden ? "opacity-0 pointer-events-none" : "opacity-100"}`}
+        <button
+          ref={menuButtonRef}
+          type="button"
+          onClick={() => setMenuOpen((prev) => !prev)}
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded md:hidden"
+          aria-label="Toggle menu"
+          aria-expanded={menuOpen}
         >
-          <div className="flex items-center space-x-5 z-50">
-            <ThemeSwitcher />
-            <FirefliesSetter />
-            <LanguageSwitcher />
-          </div>
-          <button
-            ref={menuButtonRef}
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="p-2 rounded focus:outline-none text-white"
-            aria-label="Toggle menu"
+          <svg
+            className="h-7 w-7"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
           >
-            <svg
-              className="w-10 h-10"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              {menuOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              )}
-            </svg>
-          </button>
-
-          {menuOpen && (
-            <ul
-              ref={dropdownRef}
-              className="absolute top-16 left-0 w-full flex flex-col bg-black/90 md:hidden z-50 backdrop-blur"
-            >
-              <li>
-                <Link href="/" className={`${navMobileButtonsStyle}`}>
-                  {t("home")}
-                </Link>
-              </li>
-              <li>
-                <Link href="/skills" className={`${navMobileButtonsStyle}`}>
-                  {t("about")}
-                </Link>
-              </li>
-              <li>
-                <Link href="/projects" className={`${navMobileButtonsStyle}`}>
-                  {t("projects")}
-                </Link>
-              </li>
-              <li>
-                <Link href="/contacts" className={`${navMobileButtonsStyle}`}>
-                  {t("contact")}
-                </Link>
-              </li>
-              <li>
-                <Link href="/cv" className={`${navMobileButtonsStyle}`}>
-                  {t("cv")}
-                </Link>
-              </li>
-            </ul>
-          )}
-        </nav>
-
-        <div
-          className={`absolute inset-x-0 bottom-[-8px] flex justify-center transition-opacity duration-[750ms] ${
-            isHidden ? "opacity-100" : "opacity-0 pointer-events-none"
-          }`}
-        >
-          <div className="animate-soft-pulse bg-[var(--accent-color)] text-dark w-10 h-6 rounded-b-full flex items-center justify-center shadow-md translate-y-4.5">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-4 h-4"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="black"
-              strokeWidth="5"
-            >
+            {menuOpen ? (
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                d="M19 9l-7 7-7-7"
+                strokeWidth={2}
+                d="M6 6l12 12M18 6L6 18"
               />
-            </svg>
+            ) : (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            )}
+          </svg>
+        </button>
+
+        {menuOpen && (
+          <div
+            ref={dropdownRef}
+            className="absolute top-full left-0 w-full border-b border-surface-stroke bg-glass-bg backdrop-blur-md md:hidden"
+          >
+            <ul className="flex flex-col gap-4 p-gutter">
+              <li>
+                <NavigationButton title={"home"} href="/" />
+              </li>
+              <li>
+                <NavigationButton title={"experience"} href="/experience" />
+              </li>
+              <li>
+                <NavigationButton title={"projects"} href="/projects" />
+              </li>
+            </ul>
+            <div className="flex items-center justify-between border-t border-surface-stroke px-gutter py-4">
+              <div className="flex items-center gap-4">
+                <ThemeSwitcher />
+                <LanguageSwitcher />
+              </div>
+              <Link href="/contact" className="md:flex font-bold btn-primary px-8 py-3 rounded font-label-mono text-label-mono">
+                {t("get_in_touch")}
+              </Link>
+            </div>
           </div>
-        </div>
-      </div>
+        )}
+      </nav>
     </header>
   );
 }

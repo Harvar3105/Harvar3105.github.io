@@ -1,7 +1,10 @@
 import { use } from "react";
 import { setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
-import FirefliesConsumer from "@/components/consumers/FirefliesConsumer";
+import Open from "@/assets/svg/Open";
+import Target from "@/assets/svg/Target";
+import { Link } from "@/i18n/navigation";
+// import { useTranslations } from "next-intl";
 
 export default function Home({
   params,
@@ -14,26 +17,64 @@ export default function Home({
   const t = useTranslations("Home");
 
   return (
-    <div className="h-full px-8 font-[family-name:var(--font-geist-sans)]">
-      <div className="flex flex-col-reverse w-full h-60 md:h-75 lg:h-100">
-        <span className="md:px-10">
-          <h3 className="md:text-xl text-lg">{t("about")}</h3>
-          <h1 className="md:text-6xl text-4xl font-bold">{t("name")}</h1>
-        </span>
-      </div>
-
-      <div className="flex flex-col md:pt-10 pt-3">
-        <span className="md:x-10 text-right">
-          <h3 className="md:text-4xl text-2xl font-bold">
+    <main className="relative flex-grow pt-32 pb-section-gap px-margin-mobile md:px-gutter max-w-container-max mx-auto w-full flex flex-col gap-section-gap max-md:overflow-x-clip">
+      <div className="ambient-glow"></div>
+      <section className="relative min-h-[614px] flex flex-col justify-center items-start pt-12 md:pt-0" id="hero">
+        <div className="max-w-3xl flex flex-col gap-stack-md">
+          <p className="font-label-mono text-label-mono text-primary-container mb-2 uppercase tracking-widest">
+            {t("welcome")}
+          </p>
+          <h1 className="font-headline-lg-mobile text-headline-lg-mobile md:font-display-xl md:text-display-xl text-on-surface gradient-text">
+            {t("name")}
+          </h1>
+          <h2 className="font-headline-md text-headline-md text-on-surface-variant max-w-2xl mt-4">
+            {t("whoami")}
+          </h2>
+          <div className="flex flex-wrap gap-4 mt-8">
+            <Link href="/projects" className="font-bold btn-primary px-8 py-3 rounded font-label-mono text-label-mono flex items-center gap-2">
+              {t("Buttons.to_projects")}
+            </Link>
+            <a className="btn-secondary px-8 py-3 rounded font-label-mono text-label-mono flex items-center gap-2">
+              {t("Buttons.to_github")} <Open />
+            </a>
+            <a className="btn-secondary px-8 py-3 rounded font-label-mono text-label-mono flex items-center gap-2">
+              {t("Buttons.linkedIn")} <Open />
+            </a>
+          </div>
+        </div>
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[40%] opacity-40 hidden lg:block pointer-events-none">
+          <Target />
+        </div>
+      </section>
+      <section className="flex flex-col md:flex-row gap-12 items-start" id="about">
+        <div className="md:w-1/3">
+          <h2 className="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface border-l-4 border-primary pl-4">
             {t("about_me_header")}
-          </h3>
-          <h1 className="md:text-lg text-base">{t("about_me")}</h1>
-          <br />
-          <h1 className="md:text-lg text-base">{t("passion")}</h1>
-        </span>
-      </div>
-
-      <FirefliesConsumer />
-    </div>
+          </h2>
+        </div>
+        <div className="md:w-2/3 flex flex-col gap-6 font-body-lg text-body-lg text-on-surface-variant">
+          <p>
+            {t("about_me")}
+          </p>
+          <p>
+            {t("philosophy")}
+          </p>
+          <div className="glass-card p-6 rounded-lg mt-4 border-l-2 border-l-primary">
+            <p className="font-body-md text-body-md text-on-surface">
+              {t("passion")}
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="glass-card rounded-2xl p-12 text-center flex flex-col items-center gap-6 relative overflow-hidden">
+        <div className="absolute inset-0 bg-primary opacity-5 pointer-events-none" />
+        <h2 className="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface">
+          {t("lets_build")}
+        </h2>
+        <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+          {t("reach_out")}
+        </p>
+      </section>
+    </main>
   );
 }

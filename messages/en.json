@@ -1,13 +1,13 @@
 {
   "Navigation": {
+    "logo": "MY PORTFOLIO",
     "home": "Home",
-    "about": "Skills",
+    "experience": "Experience",
     "projects": "Projects",
-    "contact": "Contact",
-    "cv": "CV"
+    "get_in_touch": "Get in touch"
   },
   "Footer": {
-    "authorship": "© 2025 Jüri Petrotšenko. Made with ♥️ on Next.js and Tailwind CSS",
+    "authorship": "© 2026 Jüri Petrotšenko. Made with ♥️ on Next.js and Tailwind CSS",
     "icons_and_illustrations": "Icons and illustrations:"
   },
   "Metadata": {
@@ -16,70 +16,67 @@
     "keywords": "Portfolio, Software Developer, Junior"
   },
   "Home":{
-    "about": "Recent Bachelor's graduate in IT Systems Development",
+    "welcome": "Welcome to my portfolio website!",
     "name": "Jüri Petrotsenko",
-    "about_me": "Recent Bachelor's graduate in IT Systems from the Tallinn University of Technology (TalTech) in Estonia with solid background in software development and system design. Interested in full-stack development and creation of web and cross-platform applications.",
+    "whoami": "Bachelor's graduate in IT Systems Development",
+    "about_me": "Junior Full-Stack Developer with a Bachelor's degree in IT Systems Development and 6 months of commercial web development experience. Experienced in building full-stack applications using .NET, Next.js and TypeScript. Strong practical experience with microservice architecture, RESTful APIs, authentication, databases, message brokers and containerized applications..",
     "about_me_header": "About me:",
-    "passion": "Interested in continued development as a developer by engaging in real projects, learning best practices, and increasing technical skills in a work environment. Currently looking for a short-term job."
+    "philosophy": "As a developer, I look beyond just writing code; I focus on understanding the ecosystem of an application. I have a natural analytical mindset that allows me to dissect complex systems, track down anomalies, and uncover the true root causes of errors. For me, software development is not about completing tasks—it is about leveraging my technical expertise to solve real-world problems and deliver meaningful impact.",
+    "passion": "Interested in continued development as a developer by engaging in real projects, learning best practices, and increasing technical skills in a work environment.",
+    "lets_build": "Let's build something fascinating!",
+    "reach_out": "If you are looking for a developer who doesn't just write code but delivers meaningful solutions, I’d love to connect. Reach out, and let’s discuss how we can bring your projects to life.",
+    "Buttons": {
+      "to_projects": "Browse Projects",
+      "to_github": "Watch on GitHub",
+      "linkedIn": "Watch on LinkedIn"
+    }
   },
-  "Skills": {
-    "Fields": {
-      "header": "Fields",
-      "Head": {
-        "field": "Field",
-        "techs": "Technologies"
-      },
-      "Body": {
-        "web": "Web",
-        "server": "Server",
-        "crosp": "Crossplatform",
-        "db": "Database",
-        "other": "Other"
-      }
+  "Experience": {
+    "header": "Technical Mastery & Experience",
+    "description": "A breakdown of my foundational skills, ongoing learning, and academic background shaping my approach to software engineering.",
+    "Skills": {
+      "section_name": "Technical Skills",
+      "front": "Frontend Architecture",
+      "back": "Backend & Systems",
+      "infra": "DevOps & Tools"
     },
-    "Prog_langs": {
-      "header": "Programming languages",
-      "Head": {
-        "lang": "Language",
-        "knowledge": "Knowledge"
-      }
+    "Edu": {
+      "section_name": "Education",
+      "date": "Jan 2022 - Jun 2025",
+      "degree": "BSc Computer Science",
+      "uni": "Tallinn University of Technology (TalTech), Estonia",
+      "description": "My academic background provided the essential foundation for my growth as a developer, introducing me not only to core programming principles but also to building production-ready systems. Throughout my studies, I deeply explored the philosophy of the craft, alongside advanced concepts in algorithms and data structures."
     },
-    "Languages": {
-      "header": "Languages",
-      "Head": {
-        "lang": "Language",
-        "lvl": "Level"
-      },
-      "Body": {
-        "Lang": {
-          "eng": "English",
-          "est": "Estonian",
-          "rus": "Russian"
-        },
-        "Level": {
-          "b2": "B2",
-          "native": "Native"
-        }
-      }
-    },
-    "Other": {
-      "header": "Other",
-      "modeling": "Modeling",
-      "game_dev": "Games development"
+    "Exp": {
+      "section_name": "Experience",
+      "date": "Jan 2025 - Jun 2025",
+      "role": "Web Development Intern",
+      "company": "AlphaCRC",
+      "t1": "Developed internal web-based tools for organizing and managing the work of company teams.",
+      "t2": "Worked with Node.js, React and MongoDB.",
+      "t3": "Participated in code reviews and testing throughout the development lifecycle.",
+      "t4": "Worked within an established professional software development workflow."
     }
   },
   "Contact":{
-    "form_name": "Contact form",
-    "Form": {
-      "name": "Your name",
-      "email": "Your email",
-      "subject": "Your subject",
-      "message": "Type message here...",
-      "send": "SEND",
-      "reset": "RESET"
-    }
+    "header": "Get in touch",
+    "description": "Whether you're looking to integrate a complex system, architect a new application, or just talk code, I'm ready to collaborate.",
+    "mail_header": "Send a message",
+    "direct_header": "Direct Vectors",
+    "addr": "Tallinn, Estonia (Remote Available)",
+    "cv_header": "Curiculum Vitae",
+    "cv_prom": "Download my complete technical history, stack proficiencies, and project architecture breakdowns.",
+    "download": "Download"
   },
-  "CV": {
-    "download": "Download CV"
+  "Email": {
+    "l_name": "Name",
+    "ph_name": "Your Name",
+    "l_email": "Email",
+    "ph_email": "Your email",
+    "l_subject": "Subject",
+    "ph_subject": "Project idea",
+    "l_message": "Message payload",
+    "ph_message": "Describe your technical reqirenments...",
+    "send": "Send message"
   }
 }
