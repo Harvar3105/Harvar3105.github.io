@@ -66,7 +66,8 @@
     "addr": "Tallinn, Estonia (Remote Available)",
     "cv_header": "Curiculum Vitae",
     "cv_prom": "Download my complete technical history, stack proficiencies, and project architecture breakdowns.",
-    "download": "Download"
+    "download": "Download",
+    "filename": "Juri_Petrotsenko_CV"
   },
   "Email": {
     "l_name": "Name",

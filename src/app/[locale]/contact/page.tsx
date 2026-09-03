@@ -4,10 +4,10 @@ import EmailSender from "@/components/widgets/Tiles/EmailSender";
 import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { use } from "react";
-import Open from "@/assets/svg/Open";
 import Github from "@/assets/svg/Github";
 import Description from "@/assets/svg/Description";
 import Download from "@/assets/svg/Download";
+import FileDownloader from "@/components/widgets/Buttons/FileDownloader";
 
 export default function Contact({
   params
@@ -48,9 +48,8 @@ export default function Contact({
                   <Mail height="35px" width="35px"/>
                 </span>
                 <span className="font-body-md text-body-md">
-                  email address . dev?
+                  {process.env.EMAIL}
                 </span>
-                <Open />
               </li>
               <li className="flex items-center gap-4 text-on-surface-variant hover:text-primary transition-colors group cursor-pointer pb-4 border-b border-surface-stroke">
                 <span className="material-symbols-outlined text-primary-container">
@@ -65,7 +64,7 @@ export default function Contact({
                   <Github height="35px" width="35px" />
                 </span>
                 <span className="font-body-md text-body-md">
-                  My github name
+                  Harvar3105
                 </span>
               </li>
             </ul>
@@ -84,15 +83,14 @@ export default function Contact({
                   {t("cv_prom")}
                 </p>
               </div>
-              <a
-                className="inline-flex items-center justify-center gap-2 border border-surface-stroke bg-transparent text-on-surface hover:bg-surface-container-high transition-colors font-label-mono text-label-mono px-6 py-3 rounded-DEFAULT w-full group-hover:border-primary-container"
-                href="#"
+              <FileDownloader
+                url="/pdf/CV.pdf"
+                filename={t("filename")}
+                style="inline-flex items-center justify-center gap-2 border border-surface-stroke bg-transparent text-on-surface hover:bg-surface-container-high transition-colors font-label-mono text-label-mono px-6 py-3 rounded-DEFAULT w-full group-hover:border-primary-container"
               >
-                <span className="material-symbols-outlined">
-                  <Download height="35px" width="35px" />
-                </span>
                 {t("download")}
-              </a>
+                <Download />
+              </FileDownloader>
             </div>
           </div>
         </div>
