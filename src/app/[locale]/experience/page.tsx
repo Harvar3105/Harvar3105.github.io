@@ -132,9 +132,20 @@ export default function Experience({
             <p className="font-body-md text-body-md text-on-surface-variant mb-4">
               {t("Exp.company")}
             </p>
-            <p className="font-body-md text-body-md text-text-muted leading-relaxed">
-              {t("Exp.description")}
-            </p>
+            <ul className="list-disc font-body-md text-body-md text-text-muted leading-relaxed">
+              <li>
+                <p>{t("Exp.t1")}</p>
+              </li>
+              <li>
+                <p>{t("Exp.t2")}</p>
+              </li>
+              <li>
+                <p>{t("Exp.t3")}</p>
+              </li>
+              <li>
+                <p>{t("Exp.t4")}</p>
+              </li>
+            </ul>
           </div>
         </section>
       </div>
