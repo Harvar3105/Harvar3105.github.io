@@ -58,6 +58,17 @@
       "t4": "Worked within an established professional software development workflow."
     }
   },
+  "Projects": {
+    "header": "Crafted with Passion & Purpose",
+    "description": "A collection of projects where I transform complex problems into elegant, functional digital experiences.",
+    "open_proj": "More details...",
+    "GamesFinder": {
+      "description": "A microservice-based application for aggregating game offers from multiple sources and presenting them through a searchable and sortable web interface."
+    },
+    "MediaDownloader": {
+      "description": "A portable Windows application providing a graphical interface for yt-dlp, allowing users to download media from supported online sources using a URL."
+    }
+  },
   "Contact":{
     "header": "Get in touch",
     "description": "Whether you're looking to integrate a complex system, architect a new application, or just talk code, I'm ready to collaborate.",
@@ -79,5 +90,9 @@
     "l_message": "Message payload",
     "ph_message": "Describe your technical reqirenments...",
     "send": "Send message"
+  },
+  "WIP": {
+    "header": "Page WIP",
+    "description": "Sorry, currently this page is unavailable. This page is under development at the moment."
   }
 }
