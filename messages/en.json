@@ -91,6 +91,69 @@
     "ph_message": "Describe your technical reqirenments...",
     "send": "Send message"
   },
+  "MediaDownloader": {
+    "Widget": {
+      "description": "DESKTOP UTILITY / OPEN SOURCE",
+      "version": "v1.0.0 Portable"
+    },
+    "Hero":{
+      "description": "A portable, standalone Windows application delivering a refined web interface for yt-dlp. Enables granular stream discovery, audio/video downloading, and rapid media extraction through a seamless WebView2 desktop bridge.",
+      "type": "Client & Engine Architecture",
+      "repo": "View Repository on GitHub",
+      "stack": "TECH STACK:"
+    },
+    "Workflow": {
+      "title": "Precision Workflow Showcase",
+      "type": "Interface In Action",
+      "Step1": {
+        "type": "Input Source",
+        "title": "Media Link Extraction & Discovery",
+        "phase": "Phase 01",
+        "description": "Clean obsidian style container UI with dual-language toggle (EN / RU). Queries the CLI daemon asynchronously to populate stream catalogs without blocking the main render thread."
+      },
+      "Step2": {
+        "title": "Format & Codec Selection Matrix",
+        "type": "Stream Select",
+        "phase":"Phase 02",
+        "description": "Direct inspectability of internal yt-dlp resolutions, framerates, and encoding formats before launching downloads."
+      }
+    },
+    "Architecture": {
+      "type": "System Design",
+      "title": "3-Tier Architecture",
+      "description": "A separation of concerns combining web fluidity, native runtime management, and low-level CLI execution.",
+      "Layer1": {
+        "level": "Layer 01",
+        "title": "Modern Web UI",
+        "description": "User-facing viewport delivering a reactive state engine, multi-language localization (EN/RU), format picker matrices, and download features.",
+        "type": "REST API Bridge"
+      },
+      "Layer2": {
+        "level": "Layer 02",
+        "title": ".NET Core Middleware",
+        "description": "The bridge backbone. Validates user input, spawns sandboxed CLI child processes, stream-parses stdout/stderr, and sanitizes result file.",
+        "type": "StdIn/StdOut Native Pipe"
+      },
+      "Layer3": {
+        "level": "Layer 03",
+        "title": "Desktop Shell Host",
+        "description": "Lightweight, single-file Windows executable packaging WebView2 evergreen runtime, with frontend and integrated server orchestration.",
+        "type": "Whole application container"
+      }
+    },
+    "Core": {
+      "title": "Underlying Engine: yt-dlp Core",
+      "version": "LATEST NIGHTLY",
+      "description": "Harnesses yt-dlp's massive parser ecosystem with over 1,800+ supported video, audio, and broadcast endpoints worldwide.",
+      "mark": "Auto-updatable binary"
+    },
+    "Codebase": {
+      "title": "Explore the codebase",
+      "description": "Licensed under MIT. Open for community contributions, issue reports, and PRs.",
+      "report": "Report an Issue",
+      "star": "Star on GitHub"
+    }
+  },
   "WIP": {
     "header": "Page WIP",
     "description": "Sorry, currently this page is unavailable. This page is under development at the moment."
