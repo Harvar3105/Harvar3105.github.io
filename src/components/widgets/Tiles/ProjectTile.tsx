@@ -1,13 +1,7 @@
+import { Project } from "@/data/projectsData";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
-
-export type Project = {
-    title: string,
-    description: string;
-    imgLink: string;
-    pageLink: string;
-  };
 
 export default function ProjectTile({
   proj
@@ -15,10 +9,10 @@ export default function ProjectTile({
   const t = useTranslations("Projects");
 
   return (
-    <div className="group bg-surface-container border border-surface-stroke rounded-xl overflow-hidden transition-colors duration-300 hover:border-primary flex flex-col md:flex-row">
+    <div className="group bg-surface-container border border-surface-stroke rounded-xl overflow-hidden transition-all duration-300 hover:border-primary flex flex-col md:flex-row hover:shadow-[0_0_30px_rgba(208,188,255,0.06)]">
       <div className="w-full md:w-1/2 h-64 md:h-auto border-b md:border-b-0 md:border-r border-surface-stroke overflow-hidden">
         <Image
-          className="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
+          className="w-full h-full object-cover grayscale opacity-75 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
           src={proj.imgLink}
           width={100}
           height={100}
@@ -32,6 +26,13 @@ export default function ProjectTile({
         <p className="font-body-md text-body-md text-on-surface-variant mb-stack-lg">
           {proj.description}
         </p>
+        <div className="flex flex-wrap gap-2 mb-6">
+          {proj.tags.map((tag) => (
+            <span key={tag} className="px-2.5 py-1 rounded bg-surface-container-low border border-surface-stroke text-xs font-label-mono text-on-surface-variant">
+              {tag}
+            </span>
+          ))}
+        </div>
         <div>
           <Link
             className="px-6 py-2 border border-primary text-primary rounded-full font-label-mono text-label-mono hover:bg-primary hover:text-on-primary transition-all"

@@ -1,4 +1,5 @@
-import ProjectTile, { Project } from "@/components/widgets/Tiles/ProjectTile";
+import ProjectTile from "@/components/widgets/Tiles/ProjectTile";
+import { Project, useGamesFinderProject, useMedeiaDownloaderProject } from "@/data/projectsData";
 import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { use } from "react";
@@ -13,19 +14,7 @@ export default function Projects({
 
   const t = useTranslations("Projects");
 
-  const projects: Project[] = [{
-    title: "GamesFinder",
-    description: t("GamesFinder.description"),
-    imgLink: "/gamesFinder/proj_preview.png",
-    pageLink: "projects/gamesFinder"
-  },
-  {
-    title: "MediaDownloader",
-    description: t("MediaDownloader.description"),
-    imgLink: "/mediaDownloader/proj_preview.png",
-    pageLink: "projects/mediaDownloader"
-  }
-  ];
+  const projects: Project[] = [useGamesFinderProject(), useMedeiaDownloaderProject()];
 
   return (
     <main className="flex-grow pt-[140px] pb-section-gap px-gutter max-w-container-max mx-auto w-full">
