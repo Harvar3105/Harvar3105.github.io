@@ -8,6 +8,7 @@ import Eye from "@/assets/svg/Eye";
 import FileSystemTree from "@/assets/svg/FileSystemTree";
 import Gears from "@/assets/svg/Gears";
 import Rocket from "@/assets/svg/Rocket";
+import Star from "@/assets/svg/Star";
 import Terminal from "@/assets/svg/Terminal";
 import Verify from "@/assets/svg/Verify";
 import Video from "@/assets/svg/Video";
@@ -43,7 +44,7 @@ export default function MediaDownloaderPage({
               <span className="group-hover:-translate-x-1 transition-transform w-6 h-6">
                 <ArrowLeftAnimated width="inherit" height="inherit" />
               </span>
-              <span className="font-label-mono text-label-mono tracking-wider uppercase">Back to Projects</span>
+              <span className="font-label-mono text-label-mono tracking-wider uppercase">{t("Widget.back")}</span>
             </Link>
             <div className="flex flex-wrap items-center gap-stack-sm">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-low border border-surface-stroke text-on-surface-variant font-label-mono text-label-mono">
@@ -61,7 +62,7 @@ export default function MediaDownloaderPage({
                 {t("Hero.type")}
               </span>
               <h1 className="gradient-text-inverse font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg mb-stack-md text-on-surface">
-                {"MediaDownloader"}
+                {project.title}
               </h1>
               <p className="font-body-lg text-body-lg text-on-surface-variant">
                 {t("Hero.description")}
@@ -69,7 +70,7 @@ export default function MediaDownloaderPage({
             </div>
             <div className="flex flex-wrap items-center gap-4">
               <a
-                href="https://github.com/Harvar3105"
+                href="https://github.com/Harvar3105/MediaDownloader"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2.5 px-6 py-3 rounded-lg bg-primary-container hover:bg-primary text-on-primary-container hover:text-on-primary font-headline-md text-body-md font-semibold shadow-[0_0_24px_rgba(160,120,255,0.25)] transition-all"
@@ -303,7 +304,7 @@ export default function MediaDownloaderPage({
             </div>
             <div className="flex items-center gap-stack-sm flex-wrap">
               <a
-                href="https://github.com/Harvar3105"
+                href="https://github.com/Harvar3105/MediaDownloader"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-headline-md text-body-md font-medium transition-colors border border-surface-stroke"
@@ -314,13 +315,13 @@ export default function MediaDownloaderPage({
                 <span>{t("Codebase.report")}</span>
               </a>
               <a
-                href="https://github.com/Harvar3105"
+                href="https://github.com/Harvar3105/MediaDownloader/issues"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-on-primary font-headline-md text-body-md font-semibold hover:bg-primary-container hover:text-white transition-all shadow-[0_0_15px_rgba(139,92,246,0.3)]"
               >
                 <span className="material-symbols-outlined text-[18px]">
-                  <Console width={15} height={15}/>
+                  <Star width={15} height={15}/>
                 </span>
                 <span>{t("Codebase.star")}</span>
               </a>
