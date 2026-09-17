@@ -16,7 +16,7 @@ export function useGamesFinderProject(): Project {
     description: t("GamesFinder.description"),
     imgLink: "/gamesFinder/proj_preview.png",
     pageLink: "projects/gamesFinder",
-    tags: ["WIP"]
+    tags: ["React", ".NET", "Next.js", "RabbitMQ", "Redis", "TypeScript", "TailwindCSS", "ASP.NET Core", "EF Core", "Node.js", "REST API", "JWT Auth", "MongoDB", "MS SQL", "Docker", "Microservice"]
   };
 }
 

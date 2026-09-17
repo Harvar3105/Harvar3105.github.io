@@ -93,6 +93,7 @@
   },
   "MediaDownloader": {
     "Widget": {
+      "back": "Back to Projects",
       "description": "DESKTOP UTILITY / OPEN SOURCE",
       "version": "v1.0.0 Portable"
     },
@@ -150,6 +151,110 @@
     "Codebase": {
       "title": "Explore the codebase",
       "description": "Licensed under MIT. Open for community contributions, issue reports, and PRs.",
+      "report": "Report an Issue",
+      "star": "Star on GitHub"
+    }
+  },
+  "GamesFinder": {
+    "Widget": {
+      "back": "Back to Projects",
+      "description": "MICROSERVICES / OPEN SOURCE",
+      "version": "v1.0.0"
+    },
+    "Hero":{
+      "description": "A resilient, decentralized digital gaming deals aggregation platform built on an event-driven microservices architecture. Continuously scrapes, normalizes, and compares pricing data across digital distribution platforms like Steam and InstantGaming (with extensible provider adapters for future storefronts).",
+      "type": "Distributed Crawler & Store Aggregation",
+      "repo": "View Repository on GitHub",
+      "stack": "TECH STACK:"
+    },
+    "Workflow": {
+      "title": "Interface in Action — Frontend & Catalog Explorer",
+      "type": "01 / System Interfaces",
+      "description": "Polished client screens built with Next.js and Tailwind CSS delivering instantaneous search, provider price comparisons, and secured authentication.",
+      "Step1": {
+        "title": "Authentication & Secure Access",
+        "description": "JWT-powered authentication flow connecting securely to the dedicated Identity Server. Provides cryptographically signed credentials, token refresh, and zero exposure of underlying persistent identity databases."
+      },
+      "Step2": {
+        "title": "Multi-Source Price Aggregation Matrix",
+        "description": "Comparative game catalog parsing Steam, InstantGaming, and future sources with search, sorting, and pricing overview providing."
+      }
+    },
+    "Architecture": {
+      "type": "02 / ARCHITECTURE & DATA PIPELINE",
+      "title": "Distributed System Architecture — Event-Driven Microservices",
+      "description": "A modular, decoupled architecture isolating client interaction, task scheduling, asynchronous web scraping, and data storage.",
+      "Scheme": {
+        "title": "Topology Scheme & Message Interconnect",
+        "m1": "Client HTTP / JWT",
+        "m2": "AMQP Task Pipeline",
+        "m3": "In-Memory Redis Buffer",
+        "m4": "MongoDB Normalized Storage"
+      },
+      "service": "SERVICE",
+      "S1": {
+        "title": "Identity Server",
+        "description": "Dedicated service generating, signing, and refreshing secure JWTs. Manages credentials in an isolated relational database. Reusable across future ecosystem microservices.",
+        "type": "ASP.NET Core / EF Core / MS SQL"
+      },
+      "S2": {
+        "title": "Frontend Client",
+        "description": "User-facing responsive interface communicating via REST with JWT. Delivers game catalog browsing, search filters, and instant deal discovery without direct DB access.",
+        "type": "Next.js / React / Tailwind"
+      },
+      "S3": {
+        "title": "Orchestrator Backend",
+        "description": "The central controller and data guard. Generates scraping tasks, validates inbound JWTs, collects worker results from Redis, and coordinates updates to the core database.",
+        "type": "ASP.NET Core / Web API"
+      },
+      "S4": {
+        "title": "Task Broker",
+        "description": "High-throughput message broker dispatching scraping tasks using Round-Robin scheduling. Automatically handles worker failure with automated dead task reassignment.",
+        "type": "RabbitMQ Message Queue"
+      },
+      "S5": {
+        "title": "Scraper Workers",
+        "description": "Autonomous, containerized worker processes scraping external targets independently. Writes parsed datasets directly into Redis.",
+        "type": "TypeScript / Node.js Fleet"
+      },
+      "S6": {
+        "title": "Caching & Result Buffer",
+        "description": "High-speed in-memory store buffering intermediate scraping payloads from workers, guaranteeing zero data loss even if the primary orchestrator restarts.",
+        "type": "Redis In-Memory Key-Value"
+      },
+      "S7": {
+        "title": "Project Related Data Store",
+        "description": "Document database storing normalized scraping results. Exclusively accessible via the backend orchestrator to isolate schemas and internal APIs from exposure to frontend or worker processes.",
+        "type": "MongoDB Document Store"
+      }
+    },
+    "Highlights": {
+      "title": "Architectural Highlights",
+      "type": "03 / Engineering Strengths",
+      "H1": {
+        "title": "Fault-Tolerant Queueing",
+        "description": "RabbitMQ Round-Robin dispatch with worker dead-letter retries. Scraper crashes do not impact cluster stability; dropped tasks automatically re-enqueue.",
+        "type": "Dead-Letter Reassignment Enabled"
+      },
+      "H2": {
+        "title": "Zero-Data-Loss In-Memory Buffer",
+        "description": "Redis staging ensures decoupled durability between asynchronous scraping bursts and backend ingestion.",
+        "type": "Sub-millisecond Payload Staging"
+      },
+      "H3": {
+        "title": "Isolated Multi-Tenant Identity",
+        "description": "Independent ASP.NET Core auth provider with JWT validation, ready for plug-and-play reuse across future services while keeping user credentials fully sandboxed in MS SQL.",
+        "type": "Stateless Bearer Verification"
+      },
+      "H4": {
+        "title": "Horizontal Worker Scalability",
+        "description": "Dockerized Node.js scraper fleet capable of spinning up dozens of replicas with requests rate limitations to guarantee ethical, continuous store price indexing.",
+        "type": "Elastic Replica Scaling"
+      }
+    },
+    "Codebase": {
+      "title": "Explore the Codebase",
+      "description": "Open for code reviews, issue reports, and engineering discussions. Inspect on GitHub.",
       "report": "Report an Issue",
       "star": "Star on GitHub"
     }
