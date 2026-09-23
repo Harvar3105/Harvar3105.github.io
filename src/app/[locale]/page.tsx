@@ -34,10 +34,10 @@ export default function Home({
             <Link href="/projects" className="font-bold btn-primary px-8 py-3 rounded font-label-mono text-label-mono flex items-center gap-2">
               {t("Buttons.to_projects")}
             </Link>
-            <a className="btn-secondary px-8 py-3 rounded font-label-mono text-label-mono flex items-center gap-2">
+            <a href={process.env.GH_URL + "?tab=repositories"} className="btn-secondary px-8 py-3 rounded font-label-mono text-label-mono flex items-center gap-2">
               {t("Buttons.to_github")} <Open />
             </a>
-            <a className="btn-secondary px-8 py-3 rounded font-label-mono text-label-mono flex items-center gap-2">
+            <a href={process.env.LINKEDIN_URL} className="btn-secondary px-8 py-3 rounded font-label-mono text-label-mono flex items-center gap-2">
               {t("Buttons.linkedIn")} <Open />
             </a>
           </div>
